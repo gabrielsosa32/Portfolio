@@ -5,6 +5,7 @@ const props = defineProps<{ project: Project | null }>()
 const emit = defineEmits<{ close: [] }>()
 const { content } = useLang()
 const t = computed(() => content.value.projects)
+const asset = useAsset()
 
 const dialog = ref<HTMLDialogElement | null>(null)
 
@@ -61,7 +62,7 @@ function onCancel(e: Event) {
         <button type="button" class="panel__close" :aria-label="t.close" @click="emit('close')">✕</button>
       </header>
 
-      <img class="panel__shot" :src="project.image" :alt="project.imageAlt" width="1280" height="800">
+      <img class="panel__shot" :src="asset(project.image)" :alt="project.imageAlt" width="1280" height="800">
 
       <div class="panel__meta">
         <span v-if="project.status === 'live'" class="live">● {{ t.live }}</span>

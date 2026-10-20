@@ -2,6 +2,7 @@
 const { lang, content } = useLang()
 const hero = computed(() => content.value.hero)
 const contact = computed(() => content.value.contact)
+const asset = useAsset()
 
 /** Cuando Gabriel pase su foto: guardarla en public/img/photo.webp y poner la ruta acá. */
 const photo = ''
@@ -12,7 +13,7 @@ const photo = ''
     <NetworkBackground />
     <div class="container hero__inner">
       <div class="hero__id">
-        <img v-if="photo" :src="photo" alt="Gabriel Sosa" class="avatar" width="72" height="72">
+        <img v-if="photo" :src="asset(photo)" alt="Gabriel Sosa" class="avatar" width="72" height="72">
         <div v-else class="avatar avatar--initials" aria-hidden="true">GS</div>
         <p class="hero__role">
           {{ hero.role }}<span class="dot" aria-hidden="true"> · </span><span class="hero__loc">{{ hero.location }}</span>
@@ -25,7 +26,7 @@ const photo = ''
       <p class="live hero__available"><span class="pulse" aria-hidden="true" />{{ hero.availability }}</p>
 
       <div class="hero__cta">
-        <a class="pill pill--dark" :href="hero.cvHref" download>{{ hero.cta.cv }}</a>
+        <a class="pill pill--dark" :href="asset(hero.cvHref)" download>{{ hero.cta.cv }}</a>
         <a class="pill" href="#contacto">{{ hero.cta.contact }}</a>
         <a class="pill" :href="contact.github" target="_blank" rel="noopener">GitHub</a>
         <a class="pill" :href="contact.linkedin" target="_blank" rel="noopener">LinkedIn</a>

@@ -3,12 +3,13 @@ import type { Project } from '~/content/types'
 
 defineProps<{ project: Project; liveLabel: string; pilotLabel: string; moreLabel: string }>()
 defineEmits<{ open: [] }>()
+const asset = useAsset()
 </script>
 
 <template>
   <article class="card pcard">
     <button type="button" class="pcard__shot" :aria-label="`${moreLabel}: ${project.name}`" @click="$emit('open')">
-      <img :src="project.image" :alt="project.imageAlt" width="1280" height="800" loading="lazy">
+      <img :src="asset(project.image)" :alt="project.imageAlt" width="1280" height="800" loading="lazy">
     </button>
     <div class="pcard__body">
       <div class="pcard__head">

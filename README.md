@@ -1,6 +1,6 @@
 # Portfolio — Gabriel Sosa
 
-Sitio personal publicado en **https://gabrielsosa32.github.io**. Es una sola página en Nuxt 4, generada como sitio estático, en español con botón para pasar a inglés.
+Sitio personal publicado en **https://gabrielsosa32.github.io/Portfolio/**. Es una sola página en Nuxt 4, generada como sitio estático, en español con botón para pasar a inglés.
 
 ## Correrlo
 

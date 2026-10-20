@@ -13,7 +13,7 @@ export const en: SiteContent = {
     titleLead: 'I build complete products, from',
     titleHighlight: 'idea to production.',
     subtitle:
-      "I'm the sole developer behind four real products: QR ticketing, an AI assistant on WhatsApp, paid EV charging and a manufacturer's website. I learn whatever it takes to get the job done.",
+      "I'm the lead developer behind four real products: QR ticketing, an AI assistant on WhatsApp, paid EV charging and a manufacturer's website. I learn whatever it takes to get the job done.",
     availability: 'Available · remote or on-site',
     cta: { cv: 'Download CV', contact: 'Contact' },
     cvHref: '/cv/gabriel-sosa-cv-en.pdf',
@@ -226,7 +226,7 @@ export const en: SiteContent = {
       'Before that I worked as a data analyst: I designed a relational database and Tableau dashboards at THV Ingeniería, and in a volunteer project for the Municipality of Funes I consolidated medical appointment reports into a Power BI dashboard. I hold a higher technical degree in Software Development and I am studying Data Science at UNR.',
       "When a project needs something I don't know yet, I learn it. That's how I ended up programming an ESP32, wiring an AI agent with tools and setting up marketplace payments.",
     ],
-    role: 'Sole developer: I designed and built everything, from the database to deployment. My business partner and I define the product together.',
+    role: 'Lead developer: I designed and built the products end to end, from the database to deployment. My business partner and I define the product together.',
     howIWorkTitle: 'How I work',
     howIWork: [
       'Tests and CI from day one: hundreds of test files across the products.',

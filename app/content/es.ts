@@ -13,7 +13,7 @@ export const es: SiteContent = {
     titleLead: 'Armo productos completos, de la',
     titleHighlight: 'idea a producción.',
     subtitle:
-      'Soy el único desarrollador de cuatro productos reales: entradas con QR, un asistente con IA por WhatsApp, cobro de carga de autos eléctricos y el sitio de un fabricante. Aprendo lo que haga falta para terminar el trabajo.',
+      'Soy el desarrollador principal de cuatro productos reales: entradas con QR, un asistente con IA por WhatsApp, cobro de carga de autos eléctricos y el sitio de un fabricante. Aprendo lo que haga falta para terminar el trabajo.',
     availability: 'Disponible · remoto o presencial',
     cta: { cv: 'Descargar CV', contact: 'Contacto' },
     cvHref: '/cv/gabriel-sosa-cv-es.pdf',
@@ -226,7 +226,7 @@ export const es: SiteContent = {
       'Antes trabajé como analista de datos: diseñé una base relacional y dashboards en Tableau en THV Ingeniería, y en un proyecto voluntario para la Municipalidad de Funes consolidé reportes de turnos médicos en un tablero de Power BI. Soy Técnico Superior en Desarrollo de Software y estudio la Licenciatura en Ciencia de Datos en la UNR.',
       'Cuando un proyecto necesita algo que no sé, lo aprendo: así llegué a programar un ESP32, integrar un agente de IA con herramientas o montar pagos marketplace.',
     ],
-    role: 'Único desarrollador: diseñé y programé todo, de la base de datos al despliegue. Las ideas de producto las definimos con mi socio.',
+    role: 'Desarrollador principal: diseñé y programé los productos de punta a punta, de la base de datos al despliegue. Las ideas de producto las definimos con mi socio.',
     howIWorkTitle: 'Cómo trabajo',
     howIWork: [
       'Tests y CI desde el primer día: cientos de archivos de test entre los productos.',

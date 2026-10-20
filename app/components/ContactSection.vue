@@ -1,7 +1,8 @@
 <script setup lang="ts">
 const { content } = useLang()
 const t = computed(() => content.value.contact)
-const cvHref = computed(() => content.value.hero.cvHref)
+const asset = useAsset()
+const cvHref = computed(() => asset(content.value.hero.cvHref))
 </script>
 
 <template>

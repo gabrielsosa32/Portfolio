@@ -27,6 +27,7 @@ describe('CV', () => {
   test.each(['es', 'en'])('el CV %s no habla de hardware ni de títulos viejos ni tiene teléfono', (l) => {
     const html = readFileSync(`docs/cv/cv-${l}.html`, 'utf8')
     expect(html).not.toMatch(/hardware/i)
+    expect(html).not.toMatch(/único desarrollador|sole developer/i)
     expect(html).not.toMatch(/co-?fundador|\bCTO\b|co-?founder/i)
     expect(html).not.toMatch(/tel:|\+54/)
   })

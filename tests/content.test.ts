@@ -52,6 +52,8 @@ describe('contenido ES/EN', () => {
       expect(s).not.toMatch(/\bTODO\b/)
       // La placa de Plugo la hace un tercero: se habla de firmware, no de hardware.
       expect(s).not.toMatch(/hardware/i)
+      // Decidido por Gabriel: "desarrollador principal", no "único".
+      expect(s).not.toMatch(/único desarrollador|sole developer/i)
     }
   })
 
@@ -66,9 +68,9 @@ describe('contenido ES/EN', () => {
     }
   })
 
-  test('la frase de rol dice único desarrollador', () => {
-    expect(es.about.role).toContain('Único desarrollador')
-    expect(en.about.role.toLowerCase()).toContain('sole developer')
+  test('la frase de rol dice desarrollador principal', () => {
+    expect(es.about.role).toContain('Desarrollador principal')
+    expect(en.about.role.toLowerCase()).toContain('lead developer')
   })
 
   test('el CV apunta a un PDF por idioma', () => {
