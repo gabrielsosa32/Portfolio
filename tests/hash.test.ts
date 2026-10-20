@@ -1,7 +1,7 @@
 import { expect, test } from 'vitest'
 import { hashForProject, projectIdFromHash } from '~/utils/hash'
 
-const ids = ['pases', 'reservas', 'plugo', 'resortes'] as const
+const ids = ['pases', 'reservas', 'techos', 'plugo', 'resortes'] as const
 
 test('reconoce el hash de un proyecto', () => {
   expect(projectIdFromHash('#pases', ids)).toBe('pases')

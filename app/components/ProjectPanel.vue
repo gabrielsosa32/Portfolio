@@ -66,7 +66,7 @@ function onCancel(e: Event) {
 
       <div class="panel__meta">
         <span v-if="project.status === 'live'" class="live">● {{ t.live }}</span>
-        <span v-else class="panel__pilot">{{ t.pilot }}</span>
+        <span v-else class="panel__pilot">{{ project.status === 'pilot' ? t.pilot : t.inProgress }}</span>
         <div class="tags"><span v-for="s in project.stack" :key="s" class="tag">{{ s }}</span></div>
       </div>
 

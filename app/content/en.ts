@@ -13,7 +13,7 @@ export const en: SiteContent = {
     titleLead: 'I build complete products, from',
     titleHighlight: 'idea to production.',
     subtitle:
-      "I'm the lead developer behind four real products: QR ticketing, an AI assistant on WhatsApp, paid EV charging and a manufacturer's website. I learn whatever it takes to get the job done.",
+      "I'm the lead developer behind five real products: QR ticketing, an AI assistant on WhatsApp, a roof-repair marketplace, paid EV charging and a manufacturer's website. I learn whatever it takes to get the job done.",
     availability: 'Available · remote or on-site',
     cta: { cv: 'Download CV', contact: 'Contact' },
     cvHref: '/cv/gabriel-sosa-cv-en.pdf',
@@ -26,6 +26,7 @@ export const en: SiteContent = {
     close: 'Close',
     live: 'in production',
     pilot: 'pilot',
+    inProgress: 'MVP in staging',
     othersTitle: 'Other projects',
     labels: {
       problem: 'The problem',
@@ -94,6 +95,35 @@ export const en: SiteContent = {
         ],
       },
       {
+        id: 'techos',
+        name: 'Techos',
+        status: 'in-progress',
+        tagline: 'A roof-repair marketplace where every job is documented and builds reputation.',
+        stack: ['Nuxt 4', 'TypeScript', 'Prisma', 'PostgreSQL', 'Playwright', 'Leaflet'],
+        image: '/img/projects/techos.webp',
+        imageAlt: 'Techos screen',
+        problem:
+          "When your roof leaks you don't know who to call or what it should cost, and a good roofer has no way to prove their past work. Quotes get sent over WhatsApp and there's no record of what was done to each house.",
+        built: [
+          'Job requests with photos of the problem, open to roofers in the area or directed to one picked from suggestions ranked by distance and reputation.',
+          'A quote builder with line items, totals and frequent items, shareable by link and downloadable as PDF; also range-based estimates.',
+          'Jobs with chat, closing with before/after photos, customer sign-off, an observation period and claims.',
+          'Public roofer profiles with verifiable reputation, plus a maintenance history per property that the owner can share.',
+          'Invite-only roofer sign-up, an admin panel, and push (PWA) and email notifications.',
+        ],
+        hard: [
+          'Privacy by design: roofers see an approximate area and distance, and the exact address is revealed only to the one whose quote won.',
+          "Proximity search using each roofer's coverage radius and a map pin (OpenStreetMap), with no paid geocoding.",
+          'Job closing as a state machine (toggleable admin review, 5-day observation, claims) that recalculates reputation.',
+          'Photo storage swappable between disk and Cloudflare R2 with signed URLs, plus a script that verifies the round trip before trusting it with real data.',
+        ],
+        result: [
+          'Complete MVP, deployed to a staging environment and ready to launch with the first roofer.',
+          '100+ test files: 70 unit and 33 end-to-end with Playwright, each suite on its own database, with GitHub Actions CI.',
+          '24 data models with Prisma on PostgreSQL.',
+        ],
+      },
+      {
         id: 'plugo',
         name: 'Plugo',
         status: 'pilot',
@@ -149,12 +179,6 @@ export const en: SiteContent = {
       },
     ],
     others: [
-      {
-        name: 'Techos',
-        description:
-          'A marketplace connecting homeowners with roofers, with documented reputation (before/after photos) and a history per property. MVP with unit and end-to-end tests.',
-        stack: ['Nuxt 4', 'Prisma', 'PostgreSQL', 'Playwright'],
-      },
       {
         name: 'Avatar Companion',
         description:
@@ -222,7 +246,7 @@ export const en: SiteContent = {
     eyebrow: 'About',
     title: 'I own the whole cycle',
     paragraphs: [
-      "I'm a full-stack developer at Teros, where I built four products: three are in production and one is piloting. I handle the data model, Mercado Pago payments, AI integration, firmware, tests and deployment.",
+      "I'm a full-stack developer at Teros, where I built five products: three are in production, one is piloting and one has its MVP in staging. I handle the data model, Mercado Pago payments, AI integration, firmware, tests and deployment.",
       'Before that I worked as a data analyst: I designed a relational database and Tableau dashboards at THV Ingeniería, and in a volunteer project for the Municipality of Funes I consolidated medical appointment reports into a Power BI dashboard. I hold a higher technical degree in Software Development and I am studying Data Science at UNR.',
       "When a project needs something I don't know yet, I learn it. That's how I ended up programming an ESP32, wiring an AI agent with tools and setting up marketplace payments.",
     ],

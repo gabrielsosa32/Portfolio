@@ -13,7 +13,7 @@ export const es: SiteContent = {
     titleLead: 'Armo productos completos, de la',
     titleHighlight: 'idea a producción.',
     subtitle:
-      'Soy el desarrollador principal de cuatro productos reales: entradas con QR, un asistente con IA por WhatsApp, cobro de carga de autos eléctricos y el sitio de un fabricante. Aprendo lo que haga falta para terminar el trabajo.',
+      'Soy el desarrollador principal de cinco productos reales: entradas con QR, un asistente con IA por WhatsApp, un marketplace de arreglos de techos, cobro de carga de autos eléctricos y el sitio de un fabricante. Aprendo lo que haga falta para terminar el trabajo.',
     availability: 'Disponible · remoto o presencial',
     cta: { cv: 'Descargar CV', contact: 'Contacto' },
     cvHref: '/cv/gabriel-sosa-cv-es.pdf',
@@ -26,6 +26,7 @@ export const es: SiteContent = {
     close: 'Cerrar',
     live: 'en producción',
     pilot: 'piloto',
+    inProgress: 'MVP en staging',
     othersTitle: 'Otros proyectos',
     labels: {
       problem: 'El problema',
@@ -94,6 +95,35 @@ export const es: SiteContent = {
         ],
       },
       {
+        id: 'techos',
+        name: 'Techos',
+        status: 'in-progress',
+        tagline: 'Marketplace de arreglos de techos donde cada trabajo queda documentado y construye reputación.',
+        stack: ['Nuxt 4', 'TypeScript', 'Prisma', 'PostgreSQL', 'Playwright', 'Leaflet'],
+        image: '/img/projects/techos.webp',
+        imageAlt: 'Pantalla de Techos',
+        problem:
+          'Quien tiene una gotera no sabe a quién llamar ni cuánto debería costar, y el buen techista no tiene cómo demostrar sus trabajos anteriores. Los presupuestos se pasan por WhatsApp y no queda registro de lo que se le hizo a cada casa.',
+        built: [
+          'Solicitudes con fotos del problema, abiertas a los techistas de la zona o dirigidas a uno elegido entre sugeridos por distancia y reputación.',
+          'Constructor de presupuestos con ítems, totales e ítems frecuentes, compartible por link y descargable en PDF; también presupuestos estimados por rango.',
+          'Trabajo con chat, cierre con fotos de antes y después, visto bueno del cliente, período de observación y reclamos.',
+          'Perfil público del techista con reputación verificable e historial de mantenimiento de cada propiedad, que el dueño puede compartir.',
+          'Registro de techistas solo por invitación, panel de administración y notificaciones push (PWA) y por mail.',
+        ],
+        hard: [
+          'Privacidad por diseño: los techistas ven zona aproximada y distancia, y la dirección exacta se revela solo al que ganó el presupuesto.',
+          'Búsqueda por cercanía con el radio de cobertura de cada techista y ubicación con pin en un mapa (OpenStreetMap), sin geocodificadores pagos.',
+          'Flujo de cierre como máquina de estados (revisión del admin desactivable, observación de 5 días, reclamos) que recalcula la reputación.',
+          'Almacenamiento de fotos intercambiable entre disco y Cloudflare R2 con URLs firmadas, con un script que verifica la ida y vuelta antes de confiarle datos reales.',
+        ],
+        result: [
+          'MVP completo, desplegado en un entorno de staging y listo para salir con el primer techista.',
+          'Más de 100 archivos de test: 70 unitarios y 33 end-to-end con Playwright, cada suite con su propia base de datos, y CI en GitHub Actions.',
+          '24 modelos de datos con Prisma sobre PostgreSQL.',
+        ],
+      },
+      {
         id: 'plugo',
         name: 'Plugo',
         status: 'pilot',
@@ -149,12 +179,6 @@ export const es: SiteContent = {
       },
     ],
     others: [
-      {
-        name: 'Techos',
-        description:
-          'Marketplace que conecta dueños de casas con techistas, con reputación documentada (fotos antes/después) e historial de cada propiedad. MVP con tests unitarios y end-to-end.',
-        stack: ['Nuxt 4', 'Prisma', 'PostgreSQL', 'Playwright'],
-      },
       {
         name: 'Avatar Companion',
         description:
@@ -222,7 +246,7 @@ export const es: SiteContent = {
     eyebrow: 'Sobre mí',
     title: 'Me ocupo de todo el ciclo',
     paragraphs: [
-      'Soy desarrollador full-stack en Teros. Ahí construí cuatro productos: tres ya están en producción y uno en piloto. Me ocupo del modelo de datos, los pagos con Mercado Pago, la integración de IA, el firmware, los tests y el despliegue.',
+      'Soy desarrollador full-stack en Teros. Ahí construí cinco productos: tres ya están en producción, uno en piloto y otro con el MVP en staging. Me ocupo del modelo de datos, los pagos con Mercado Pago, la integración de IA, el firmware, los tests y el despliegue.',
       'Antes trabajé como analista de datos: diseñé una base relacional y dashboards en Tableau en THV Ingeniería, y en un proyecto voluntario para la Municipalidad de Funes consolidé reportes de turnos médicos en un tablero de Power BI. Soy Técnico Superior en Desarrollo de Software y estudio la Licenciatura en Ciencia de Datos en la UNR.',
       'Cuando un proyecto necesita algo que no sé, lo aprendo: así llegué a programar un ESP32, integrar un agente de IA con herramientas o montar pagos marketplace.',
     ],

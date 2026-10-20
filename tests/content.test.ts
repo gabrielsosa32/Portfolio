@@ -13,8 +13,8 @@ function allStrings(value: unknown): string[] {
 }
 
 describe('contenido ES/EN', () => {
-  test('los proyectos principales son los cuatro, en el mismo orden en ambos idiomas', () => {
-    const ids = ['pases', 'reservas', 'plugo', 'resortes']
+  test('los proyectos principales son los cinco, en el mismo orden en ambos idiomas', () => {
+    const ids = ['pases', 'reservas', 'techos', 'plugo', 'resortes']
     expect(es.projects.main.map(p => p.id)).toEqual(ids)
     expect(en.projects.main.map(p => p.id)).toEqual(ids)
   })
@@ -37,6 +37,10 @@ describe('contenido ES/EN', () => {
       expect(q.status).toBe(p.status)
       expect(q.stack).toEqual(p.stack)
     })
+  })
+
+  test('Techos no figura dos veces (está en principales, no en otros)', () => {
+    for (const c of [es, en]) expect(c.projects.others.map(o => o.name)).not.toContain('Techos')
   })
 
   test('otros proyectos y proyectos de datos están alineados entre idiomas', () => {

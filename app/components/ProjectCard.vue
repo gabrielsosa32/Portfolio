@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Project } from '~/content/types'
 
-defineProps<{ project: Project; liveLabel: string; pilotLabel: string; moreLabel: string }>()
+defineProps<{ project: Project; liveLabel: string; pilotLabel: string; inProgressLabel: string; moreLabel: string }>()
 defineEmits<{ open: [] }>()
 const asset = useAsset()
 </script>
@@ -15,7 +15,7 @@ const asset = useAsset()
       <div class="pcard__head">
         <h3>{{ project.name }}</h3>
         <span v-if="project.status === 'live'" class="live">● {{ liveLabel }}</span>
-        <span v-else class="pcard__pilot">{{ pilotLabel }}</span>
+        <span v-else class="pcard__pilot">{{ project.status === 'pilot' ? pilotLabel : inProgressLabel }}</span>
       </div>
       <p class="pcard__tagline">{{ project.tagline }}</p>
       <div class="tags">

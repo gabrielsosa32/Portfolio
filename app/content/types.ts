@@ -1,6 +1,6 @@
 export type Lang = 'es' | 'en'
 export type ProjectStatus = 'live' | 'pilot' | 'in-progress'
-export type ProjectId = 'pases' | 'reservas' | 'plugo' | 'resortes'
+export type ProjectId = 'pases' | 'reservas' | 'techos' | 'plugo' | 'resortes'
 
 export interface Project {
   id: ProjectId
@@ -52,6 +52,7 @@ export interface SiteContent {
     close: string
     live: string
     pilot: string
+    inProgress: string
     othersTitle: string
     labels: { problem: string; built: string; hard: string; result: string; visit: string }
     main: Project[]
