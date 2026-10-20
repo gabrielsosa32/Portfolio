@@ -22,12 +22,12 @@ const cvHref = computed(() => asset(content.value.hero.cvHref))
 </template>
 
 <style scoped>
-.contact { background: var(--fg); color: #fafaf9; }
+.contact { background: var(--bg-alt); color: var(--fg); border-top: 1px solid var(--border); }
 .contact__inner { padding-top: 88px; padding-bottom: 40px; text-align: center; }
 .contact__title { font-size: clamp(30px, 5vw, 48px); letter-spacing: -.03em; line-height: 1.1; }
-.contact__sub { color: #d6d3d1; margin: 14px auto 0; max-width: 520px; }
+.contact__sub { color: var(--fg-2); margin: 14px auto 0; max-width: 520px; }
 .contact__cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 32px; }
-.pill--light { background: #fafaf9; color: var(--fg); border-color: #fafaf9; max-width: 100%; overflow-wrap: anywhere; }
-.pill--ghost { background: transparent; color: #fafaf9; border-color: #57534e; }
-.contact__foot { margin-top: 72px; font-size: 13px; color: #a8a29e; }
+.pill--light { background: var(--btn-bg); color: var(--btn-fg); border-color: var(--btn-bg); max-width: 100%; overflow-wrap: anywhere; }
+.pill--ghost { background: transparent; color: var(--fg); border-color: var(--border-strong); }
+.contact__foot { margin-top: 72px; font-size: 13px; color: var(--muted); }
 </style>

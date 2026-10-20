@@ -30,7 +30,7 @@ const asset = useAsset()
 
 <style scoped>
 .pcard { display: flex; flex-direction: column; overflow: hidden; transition: transform .2s ease, box-shadow .2s ease; }
-.pcard:hover { transform: translateY(-3px); box-shadow: 0 2px 6px rgb(0 0 0 / .05), 0 18px 40px rgb(0 0 0 / .08); }
+.pcard:hover { transform: translateY(-3px); box-shadow: 0 2px 6px rgb(0 0 0 / .4), 0 18px 40px rgb(0 0 0 / .45); border-color: var(--border-strong); }
 @media (prefers-reduced-motion: reduce) { .pcard, .pcard:hover { transition: none; transform: none; } }
 .pcard__shot { display: block; padding: 0; border: 0; background: var(--bg-alt); cursor: pointer; aspect-ratio: 16 / 10; overflow: hidden; border-bottom: 1px solid var(--border); }
 .pcard__shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .4s ease; }

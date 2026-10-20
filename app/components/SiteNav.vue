@@ -26,10 +26,10 @@ const nav = computed(() => content.value.nav)
 <style scoped>
 .nav {
   position: sticky; top: 0; z-index: 20;
-  background: rgb(250 250 249 / .8);
+  background: var(--nav-bg);
   backdrop-filter: saturate(1.4) blur(12px);
   -webkit-backdrop-filter: saturate(1.4) blur(12px);
-  border-bottom: 1px solid rgb(231 229 228 / .7);
+  border-bottom: 1px solid var(--border);
 }
 .nav__inner { display: flex; align-items: center; gap: 24px; height: 60px; }
 .nav__name { font-weight: 700; text-decoration: none; letter-spacing: -.01em; margin-right: auto; }

@@ -104,9 +104,9 @@ function onCancel(e: Event) {
   overscroll-behavior: contain;
 }
 @media (min-width: 768px) {
-  .panel { margin: auto; height: auto; max-height: min(88dvh, 920px); border-radius: 20px; box-shadow: 0 30px 80px rgb(0 0 0 / .25); }
+  .panel { margin: auto; height: auto; max-height: min(88dvh, 920px); border-radius: 20px; box-shadow: 0 30px 80px rgb(0 0 0 / .6); border: 1px solid var(--border); }
 }
-.panel::backdrop { background: rgb(28 25 23 / .55); backdrop-filter: blur(4px); }
+.panel::backdrop { background: rgb(0 0 0 / .7); backdrop-filter: blur(4px); }
 .panel[open] { animation: panel-in .28s cubic-bezier(.2, .8, .2, 1); }
 .panel[open]::backdrop { animation: fade-in .28s ease; }
 @keyframes panel-in { from { opacity: 0; transform: translateY(18px) scale(.985); } }

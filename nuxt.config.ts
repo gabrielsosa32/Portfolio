@@ -16,7 +16,7 @@ export default defineNuxtConfig({
       htmlAttrs: { lang: 'es' },
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'theme-color', content: '#fafaf9' },
+        { name: 'theme-color', content: '#0c0a09' },
         { property: 'og:type', content: 'website' },
         { property: 'og:url', content: `${SITE_URL}/` },
         { property: 'og:site_name', content: 'Gabriel Sosa' },

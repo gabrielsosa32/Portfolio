@@ -40,10 +40,10 @@ const photo = ''
 .hero__inner { position: relative; padding-top: 56px; padding-bottom: 88px; }
 @media (min-width: 768px) { .hero__inner { padding-top: 96px; padding-bottom: 128px; } }
 .hero__id { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
-.avatar { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; flex: none; border: 3px solid #fff; box-shadow: var(--shadow); }
+.avatar { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; flex: none; border: 3px solid var(--border-strong); box-shadow: var(--shadow); }
 .avatar--initials {
   display: grid; place-items: center; font-weight: 700; font-size: 22px; color: var(--muted);
-  background: linear-gradient(135deg, #f5f5f4, #e7e5e4);
+  background: linear-gradient(135deg, #292524, #1c1917);
 }
 .hero__role { font-size: 15px; font-weight: 600; color: var(--accent); }
 .hero__loc { color: var(--muted); font-weight: 500; }

@@ -3,6 +3,8 @@ import { createNodes, linkAlpha, nodeCountFor, stepNodes, type NetNode } from '~
 
 const canvas = ref<HTMLCanvasElement | null>(null)
 const LINK_DIST = 120
+/** Color de la red, tomado de --net-rgb (p. ej. "96, 165, 250"). */
+let rgb = '96, 165, 250'
 
 onMounted(() => {
   const el = canvas.value
@@ -10,6 +12,7 @@ onMounted(() => {
   const ctx = el?.getContext('2d')
   if (!el || !host || !ctx) return
 
+  rgb = getComputedStyle(document.documentElement).getPropertyValue('--net-rgb').trim() || rgb
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   let w = 0, h = 0
   let nodes: NetNode[] = []
@@ -36,7 +39,7 @@ onMounted(() => {
         const b = nodes[j]!
         const alpha = linkAlpha(Math.hypot(a.x - b.x, a.y - b.y), LINK_DIST)
         if (alpha > 0) {
-          ctx!.strokeStyle = `rgba(37, 99, 235, ${alpha * 0.28})`
+          ctx!.strokeStyle = `rgba(${rgb}, ${alpha * 0.22})`
           ctx!.lineWidth = 1
           ctx!.beginPath()
           ctx!.moveTo(a.x, a.y)
@@ -45,7 +48,7 @@ onMounted(() => {
         }
       }
     }
-    ctx!.fillStyle = 'rgba(37, 99, 235, 0.45)'
+    ctx!.fillStyle = `rgba(${rgb}, 0.5)`
     for (const n of nodes) {
       ctx!.beginPath()
       ctx!.arc(n.x, n.y, 2, 0, Math.PI * 2)
