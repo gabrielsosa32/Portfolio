@@ -13,10 +13,11 @@ const nav = computed(() => content.value.nav)
         <a href="#sobre-mi">{{ nav.about }}</a>
         <a href="#contacto">{{ nav.contact }}</a>
       </nav>
-      <button type="button" class="nav__lang" :aria-label="nav.switchLang" @click="toggle">
+      <button type="button" class="nav__lang" @click="toggle">
         <span :class="{ on: lang === 'es' }">ES</span>
-        <span aria-hidden="true" class="sep">|</span>
+        <span class="sep">|</span>
         <span :class="{ on: lang === 'en' }">EN</span>
+        <span class="visually-hidden">— {{ nav.switchLang }}</span>
       </button>
     </div>
   </header>
