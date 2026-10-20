@@ -4,7 +4,7 @@ export const es: SiteContent = {
   meta: {
     title: 'Gabriel Sosa — Desarrollador Full-Stack',
     description:
-      'Desarrollador Full-Stack en Funes, Santa Fe. Construyo productos completos, de la idea a producción: pagos con Mercado Pago, bots con IA, QR y hardware.',
+      'Desarrollador Full-Stack en Funes, Santa Fe. Construyo productos completos, de la idea a producción: pagos con Mercado Pago, bots con IA, QR y firmware para ESP32.',
   },
   nav: { projects: 'Proyectos', data: 'Datos', about: 'Sobre mí', contact: 'Contacto', switchLang: 'Cambiar idioma a inglés' },
   hero: {

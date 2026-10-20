@@ -4,7 +4,7 @@ export const en: SiteContent = {
   meta: {
     title: 'Gabriel Sosa — Full-Stack Developer',
     description:
-      'Full-Stack Developer based in Argentina. I build complete products, from idea to production: payments, AI bots, QR flows and hardware.',
+      'Full-Stack Developer based in Argentina. I build complete products, from idea to production: payments, AI bots, QR flows and ESP32 firmware.',
   },
   nav: { projects: 'Projects', data: 'Data', about: 'About', contact: 'Contact', switchLang: 'Switch language to Spanish' },
   hero: {

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Gabriel Sosa — CV</title>
+<link rel="stylesheet" href="cv.css">
+</head>
+<body>
+<div class="page">
+  <header>
+    <div>
+      <h1>Gabriel Sosa</h1>
+      <p class="role">Desarrollador Full-Stack</p>
+      <p class="tagline">Armo productos completos, de la idea a producción: modelo de datos, pagos, integración de IA, firmware, tests y despliegue. Disponible para trabajo remoto o presencial.</p>
+    </div>
+    <div class="contacts">
+      <a href="https://gabrielsosa32.github.io">gabrielsosa32.github.io</a>
+      <a href="mailto:gabbysosa32@gmail.com">gabbysosa32@gmail.com</a>
+      <a href="https://www.linkedin.com/in/gabrielsosa32/">linkedin.com/in/gabrielsosa32</a>
+      <a href="https://github.com/gabrielsosa32">github.com/gabrielsosa32</a>
+      <span>Funes, Santa Fe, Argentina</span>
+    </div>
+  </header>
+
+  <div class="grid">
+    <main>
+      <section>
+        <h2>Experiencia</h2>
+        <div class="entry">
+          <div class="head"><h3>Desarrollador Full-Stack — <span class="org">Teros</span></h3><span class="when">2026 – actualidad</span></div>
+          <p class="sub">Único desarrollador: diseñé y programé todo, de la base de datos al despliegue. Las ideas de producto las definimos con mi socio.</p>
+          <ul>
+            <li><b>Teros Reservas</b> (reservas.teros.com.ar): asistente con IA (Claude API, 28 herramientas) que toma reservas y pedidos por WhatsApp sin doble reserva; lectura de comprobantes con visión; BullMQ + Redis; multi-tenant con RLS en Supabase. En producción con negocios reales.</li>
+            <li><b>Pases</b> (pases.teros.com.ar): entradas con QR firmado (Ed25519) para boliches, app de puerta offline con reconciliación, barra con pedidos y Mercado Pago Marketplace con tokens cifrados. Next.js + Supabase, 90 archivos de test y CI.</li>
+            <li><b>Plugo</b> (plugo.com.ar): cobro de carga de autos eléctricos por QR; firmware ESP32 con autenticación de dispositivos y cola de comandos; pagos divididos con Mercado Pago y reembolsos automáticos. Más de 100 archivos de test. En piloto.</li>
+            <li><b>Resortes NV</b> (resortesnv.com.ar): sitio y catálogo para un fabricante, en Nuxt 4 con validación compartida (zod) y SEO técnico.</li>
+          </ul>
+        </div>
+        <div class="entry">
+          <div class="head"><h3>Junior Data Analyst — <span class="org">THV Ingeniería</span></h3><span class="when">2025</span></div>
+          <ul>
+            <li>Diseño de una base relacional para el registro de proyectos; limpieza y normalización de datos históricos.</li>
+            <li>Dashboards en Tableau de costos y tiempos de entrega.</li>
+          </ul>
+        </div>
+        <div class="entry">
+          <div class="head"><h3>Data Analyst (voluntario) — <span class="org">Municipalidad de Funes</span></h3><span class="when">2025</span></div>
+          <ul>
+            <li>Consolidé 12 reportes mensuales de turnos médicos (22 especialidades) en un tablero de Power BI que mostró sectores sobrecargados y con baja actividad.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Proyectos de datos</h2>
+        <ul class="plain">
+          <li><b>Precio de vuelos</b> — regresión sobre más de 300.000 vuelos, 6 modelos comparados; Random Forest con R² 0,97.</li>
+          <li><b>Noticias falsas</b> — red LSTM sobre embeddings Word2Vec, 91% de acierto.</li>
+          <li><b>Enfermedad cardíaca</b> y <b>abandono de clientes</b> — boosting y bagging (AUC 0,89 y 0,86), con apps en Streamlit.</li>
+        </ul>
+      </section>
+    </main>
+
+    <aside>
+      <section>
+        <h2>Habilidades</h2>
+        <h4>Frontend</h4>
+        <p class="chips"><span>Vue 3 / Nuxt</span><span>React / Next.js</span><span>TypeScript</span><span>PWA</span><span>HTML / CSS</span></p>
+        <h4>Backend</h4>
+        <p class="chips"><span>Node.js / Express</span><span>REST</span><span>BullMQ + Redis</span><span>WhatsApp / Meta APIs</span><span>PHP</span></p>
+        <h4>Datos</h4>
+        <p class="chips"><span>PostgreSQL</span><span>Supabase (RLS)</span><span>MySQL</span><span>SQL Server</span><span>Python</span><span>pandas</span><span>scikit-learn</span><span>Tableau</span><span>Power BI</span></p>
+        <h4>IA, pagos y hardware</h4>
+        <p class="chips"><span>Claude API (tool use, visión)</span><span>Mercado Pago</span><span>ESP32 (C++)</span></p>
+        <h4>Herramientas</h4>
+        <p class="chips"><span>Git / GitHub Actions</span><span>Vitest / Jest / Playwright</span><span>Vercel</span><span>Railway</span><span>Docker</span></p>
+      </section>
+      <section>
+        <h2>Educación</h2>
+        <div class="edu"><h4>Lic. en Ciencia de Datos</h4><div class="org">Universidad Nacional de Rosario</div><div class="when">2025 – actualidad</div></div>
+        <div class="edu"><h4>Técnico Superior en Desarrollo de Software</h4><div class="org">Terciario Urquiza</div><div class="when">2020</div></div>
+        <p class="courses"><b>Certificaciones:</b> Desafío Latam — SQL, Python para análisis de datos, Estadística con Python, Visualización, Machine Learning (354 h). Data Analyst (Google / Coursera, 2023). Desarrollo Mobile (Comunidad IT, 2021).</p>
+      </section>
+      <section>
+        <h2>Idiomas</h2>
+        <div class="lang"><b>Español</b><span>Nativo</span></div>
+        <div class="lang"><b>Inglés</b><span>Intermedio</span></div>
+      </section>
+    </aside>
+  </div>
+</div>
+</body>
+</html>

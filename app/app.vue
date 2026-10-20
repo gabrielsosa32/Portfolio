@@ -4,7 +4,11 @@ const { lang, content, restore } = useLang()
 useHead(() => ({
   htmlAttrs: { lang: lang.value },
   title: content.value.meta.title,
-  meta: [{ name: 'description', content: content.value.meta.description }],
+  meta: [
+    { name: 'description', content: content.value.meta.description },
+    { property: 'og:title', content: content.value.meta.title },
+    { property: 'og:description', content: content.value.meta.description },
+  ],
 }))
 
 onMounted(restore)

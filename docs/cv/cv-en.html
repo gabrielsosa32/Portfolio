@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gabriel Sosa — CV</title>
+<link rel="stylesheet" href="cv.css">
+</head>
+<body>
+<div class="page">
+  <header>
+    <div>
+      <h1>Gabriel Sosa</h1>
+      <p class="role">Full-Stack Developer</p>
+      <p class="tagline">I build complete products, from idea to production: data model, payments, AI integration, firmware, tests and deployment. Available for remote or on-site work.</p>
+    </div>
+    <div class="contacts">
+      <a href="https://gabrielsosa32.github.io">gabrielsosa32.github.io</a>
+      <a href="mailto:gabbysosa32@gmail.com">gabbysosa32@gmail.com</a>
+      <a href="https://www.linkedin.com/in/gabrielsosa32/">linkedin.com/in/gabrielsosa32</a>
+      <a href="https://github.com/gabrielsosa32">github.com/gabrielsosa32</a>
+      <span>Funes, Santa Fe, Argentina</span>
+    </div>
+  </header>
+
+  <div class="grid">
+    <main>
+      <section>
+        <h2>Experience</h2>
+        <div class="entry">
+          <div class="head"><h3>Full-Stack Developer — <span class="org">Teros</span></h3><span class="when">2026 – present</span></div>
+          <p class="sub">Sole developer: I designed and built everything, from the database to deployment. My business partner and I define the product together.</p>
+          <ul>
+            <li><b>Teros Reservas</b> (reservas.teros.com.ar): AI assistant (Claude API, 28 tools) that takes bookings and orders over WhatsApp without double-booking; receipt reading with vision; BullMQ + Redis; multi-tenant with RLS on Supabase. In production with real businesses.</li>
+            <li><b>Pases</b> (pases.teros.com.ar): Ed25519-signed QR tickets for nightclubs, an offline door app with reconciliation, bar ordering and Mercado Pago Marketplace with encrypted tokens. Next.js + Supabase, 90 test files and CI.</li>
+            <li><b>Plugo</b> (plugo.com.ar): paid EV charging via QR; ESP32 firmware with device authentication and a command queue; split payments with Mercado Pago and automatic refunds. 100+ test files. Piloting.</li>
+            <li><b>Resortes NV</b> (resortesnv.com.ar): website and catalog for a manufacturer, built with Nuxt 4, shared zod validation and technical SEO.</li>
+          </ul>
+        </div>
+        <div class="entry">
+          <div class="head"><h3>Junior Data Analyst — <span class="org">THV Ingeniería</span></h3><span class="when">2025</span></div>
+          <ul>
+            <li>Designed a relational database for project tracking; cleaned and normalized historical data.</li>
+            <li>Tableau dashboards for costs and delivery times.</li>
+          </ul>
+        </div>
+        <div class="entry">
+          <div class="head"><h3>Data Analyst (volunteer) — <span class="org">Municipality of Funes</span></h3><span class="when">2025</span></div>
+          <ul>
+            <li>Consolidated 12 monthly medical appointment reports (22 specialties) into a Power BI dashboard that exposed overloaded and underused departments.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Data projects</h2>
+        <ul class="plain">
+          <li><b>Flight prices</b> — regression on 300,000+ flights, 6 models compared; Random Forest with R² 0.97.</li>
+          <li><b>Fake news</b> — LSTM over Word2Vec embeddings, 91% accuracy.</li>
+          <li><b>Heart disease</b> and <b>customer churn</b> — boosting and bagging (AUC 0.89 and 0.86), with Streamlit apps.</li>
+        </ul>
+      </section>
+    </main>
+
+    <aside>
+      <section>
+        <h2>Skills</h2>
+        <h4>Frontend</h4>
+        <p class="chips"><span>Vue 3 / Nuxt</span><span>React / Next.js</span><span>TypeScript</span><span>PWA</span><span>HTML / CSS</span></p>
+        <h4>Backend</h4>
+        <p class="chips"><span>Node.js / Express</span><span>REST</span><span>BullMQ + Redis</span><span>WhatsApp / Meta APIs</span><span>PHP</span></p>
+        <h4>Data</h4>
+        <p class="chips"><span>PostgreSQL</span><span>Supabase (RLS)</span><span>MySQL</span><span>SQL Server</span><span>Python</span><span>pandas</span><span>scikit-learn</span><span>Tableau</span><span>Power BI</span></p>
+        <h4>AI, payments and hardware</h4>
+        <p class="chips"><span>Claude API (tool use, vision)</span><span>Mercado Pago</span><span>ESP32 (C++)</span></p>
+        <h4>Tooling</h4>
+        <p class="chips"><span>Git / GitHub Actions</span><span>Vitest / Jest / Playwright</span><span>Vercel</span><span>Railway</span><span>Docker</span></p>
+      </section>
+      <section>
+        <h2>Education</h2>
+        <div class="edu"><h4>B.Sc. in Data Science (in progress)</h4><div class="org">Universidad Nacional de Rosario</div><div class="when">2025 – present</div></div>
+        <div class="edu"><h4>Higher Technical Degree in Software Development</h4><div class="org">Terciario Urquiza</div><div class="when">2020</div></div>
+        <p class="courses"><b>Certifications:</b> Desafío Latam — SQL, Python for data analysis, Statistics with Python, Visualization, Machine Learning (354 h). Data Analyst (Google / Coursera, 2023). Mobile Development (Comunidad IT, 2021).</p>
+      </section>
+      <section>
+        <h2>Languages</h2>
+        <div class="lang"><b>Spanish</b><span>Native</span></div>
+        <div class="lang"><b>English</b><span>Intermediate</span></div>
+      </section>
+    </aside>
+  </div>
+</div>
+</body>
+</html>

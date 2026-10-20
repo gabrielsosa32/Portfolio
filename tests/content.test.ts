@@ -50,6 +50,8 @@ describe('contenido ES/EN', () => {
     for (const s of allStrings(c)) {
       expect(s).not.toMatch(/co-?fundador|\bCTO\b|co-?founder|lorem/i)
       expect(s).not.toMatch(/\bTODO\b/)
+      // La placa de Plugo la hace un tercero: se habla de firmware, no de hardware.
+      expect(s).not.toMatch(/hardware/i)
     }
   })
 
