@@ -13,14 +13,14 @@ export const es: SiteContent = {
     titleLead: 'Armo productos completos, de la',
     titleHighlight: 'idea a producción.',
     subtitle:
-      'Soy el único desarrollador de cuatro productos en producción: entradas con QR, un asistente con IA por WhatsApp, cobro de carga de autos eléctricos y el sitio de un fabricante. Aprendo lo que haga falta para terminar el trabajo.',
+      'Soy el único desarrollador de cuatro productos reales: entradas con QR, un asistente con IA por WhatsApp, cobro de carga de autos eléctricos y el sitio de un fabricante. Aprendo lo que haga falta para terminar el trabajo.',
     availability: 'Disponible · remoto o presencial',
     cta: { cv: 'Descargar CV', contact: 'Contacto' },
     cvHref: '/cv/gabriel-sosa-cv-es.pdf',
   },
   projects: {
     eyebrow: 'Proyectos',
-    title: 'Productos reales, con usuarios y pagos reales',
+    title: 'Productos reales, en producción',
     intro: 'Desarrollados en Teros. Hacé clic en cada uno para ver el problema, qué construí y lo más difícil.',
     more: 'Ver más',
     close: 'Cerrar',
@@ -88,7 +88,7 @@ export const es: SiteContent = {
           'Multi-tenancy con RLS en Supabase y 50 migraciones SQL.',
         ],
         result: [
-          'En producción, con negocios usando el bot todos los días.',
+          'En producción, con negocios usando el bot.',
           '36 archivos de test más simulaciones de conversación, con CI en GitHub Actions.',
           'El módulo de Pedidos nació como un prototipo aparte y lo integré al producto.',
         ],
@@ -222,7 +222,7 @@ export const es: SiteContent = {
     eyebrow: 'Sobre mí',
     title: 'Me ocupo de todo el ciclo',
     paragraphs: [
-      'Soy desarrollador full-stack en Teros. Ahí construí cuatro productos que hoy están en producción: me ocupo del modelo de datos, los pagos con Mercado Pago, la integración de IA, el firmware, los tests y el despliegue.',
+      'Soy desarrollador full-stack en Teros. Ahí construí cuatro productos: tres ya están en producción y uno en piloto. Me ocupo del modelo de datos, los pagos con Mercado Pago, la integración de IA, el firmware, los tests y el despliegue.',
       'Antes trabajé como analista de datos: diseñé una base relacional y dashboards en Tableau en THV Ingeniería, y en un proyecto voluntario para la Municipalidad de Funes consolidé reportes de turnos médicos en un tablero de Power BI. Soy Técnico Superior en Desarrollo de Software y estudio la Licenciatura en Ciencia de Datos en la UNR.',
       'Cuando un proyecto necesita algo que no sé, lo aprendo: así llegué a programar un ESP32, integrar un agente de IA con herramientas o montar pagos marketplace.',
     ],

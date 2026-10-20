@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { ProjectId } from '~/content/types'
-import { hashForProject, projectIdFromHash } from '~/utils/hash'
+import { projectIdFromHash } from '~/utils/hash'
+import { createPanelHistory } from '~/utils/panelHistory'
 
 const { content } = useLang()
 const t = computed(() => content.value.projects)
@@ -8,32 +9,32 @@ const ids = computed(() => t.value.main.map(p => p.id))
 
 const openId = ref<ProjectId | null>(null)
 const openProject = computed(() => t.value.main.find(p => p.id === openId.value) ?? null)
-/** true si el panel lo abrió un clic en esta página (hay una entrada propia en el historial). */
-let pushedByUs = false
+let panelHistory: ReturnType<typeof createPanelHistory> | null = null
 
 function syncFromHash() {
   openId.value = projectIdFromHash(location.hash, ids.value)
-  if (!openId.value) pushedByUs = false
+  panelHistory?.synced(openId.value !== null)
 }
 
 function open(id: ProjectId) {
-  history.pushState(null, '', hashForProject(id))
-  pushedByUs = true
+  panelHistory?.open(id)
   openId.value = id
 }
 
 function close() {
   if (!openId.value) return
-  if (pushedByUs) {
-    history.back() // popstate → syncFromHash cierra el panel
-  } else {
-    history.replaceState(null, '', location.pathname + location.search)
-    openId.value = null
-  }
+  // Se cierra ya (no al llegar el popstate), así un segundo "cerrar" no vuelve a ir atrás.
+  openId.value = null
+  panelHistory?.close()
 }
 
 onMounted(() => {
-  syncFromHash()
+  panelHistory = createPanelHistory(window.history, location.pathname + location.search)
+  const initial = projectIdFromHash(location.hash, ids.value)
+  if (initial) {
+    panelHistory.openFromLoad(initial)
+    openId.value = initial
+  }
   window.addEventListener('popstate', syncFromHash)
   window.addEventListener('hashchange', syncFromHash)
 })

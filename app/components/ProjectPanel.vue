@@ -17,11 +17,19 @@ watch(() => props.project, (p) => {
     document.documentElement.style.overflow = 'hidden'
   } else if (!p && d.open) {
     d.close()
+    unlockScroll()
   }
 }, { flush: 'post', immediate: true })
 
-function onClose() {
+// El scroll se libera explícitamente en cada camino de cierre: no alcanza con el evento `close`.
+function unlockScroll() {
   document.documentElement.style.overflow = ''
+}
+
+onBeforeUnmount(unlockScroll)
+
+function onClose() {
+  unlockScroll()
   if (props.project) emit('close')
 }
 

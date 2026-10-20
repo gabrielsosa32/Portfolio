@@ -13,14 +13,14 @@ export const en: SiteContent = {
     titleLead: 'I build complete products, from',
     titleHighlight: 'idea to production.',
     subtitle:
-      "I'm the sole developer behind four products in production: QR ticketing, an AI assistant on WhatsApp, paid EV charging and a manufacturer's website. I learn whatever it takes to get the job done.",
+      "I'm the sole developer behind four real products: QR ticketing, an AI assistant on WhatsApp, paid EV charging and a manufacturer's website. I learn whatever it takes to get the job done.",
     availability: 'Available · remote or on-site',
     cta: { cv: 'Download CV', contact: 'Contact' },
     cvHref: '/cv/gabriel-sosa-cv-en.pdf',
   },
   projects: {
     eyebrow: 'Projects',
-    title: 'Real products, with real users and real payments',
+    title: 'Real products, in production',
     intro: 'Built at Teros. Click any of them to see the problem, what I built and the hardest parts.',
     more: 'Read more',
     close: 'Close',
@@ -88,7 +88,7 @@ export const en: SiteContent = {
           'Multi-tenancy with RLS on Supabase and 50 SQL migrations.',
         ],
         result: [
-          'In production, with businesses using the bot every day.',
+          'In production, with businesses using the bot.',
           '36 test files plus conversation simulations, with GitHub Actions CI.',
           'The Orders module started as a separate prototype and I merged it into the product.',
         ],
@@ -222,7 +222,7 @@ export const en: SiteContent = {
     eyebrow: 'About',
     title: 'I own the whole cycle',
     paragraphs: [
-      "I'm a full-stack developer at Teros, where I built four products that are now in production. I handle the data model, Mercado Pago payments, AI integration, firmware, tests and deployment.",
+      "I'm a full-stack developer at Teros, where I built four products: three are in production and one is piloting. I handle the data model, Mercado Pago payments, AI integration, firmware, tests and deployment.",
       'Before that I worked as a data analyst: I designed a relational database and Tableau dashboards at THV Ingeniería, and in a volunteer project for the Municipality of Funes I consolidated medical appointment reports into a Power BI dashboard. I hold a higher technical degree in Software Development and I am studying Data Science at UNR.',
       "When a project needs something I don't know yet, I learn it. That's how I ended up programming an ESP32, wiring an AI agent with tools and setting up marketplace payments.",
     ],
