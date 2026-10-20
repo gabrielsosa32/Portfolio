@@ -24,6 +24,7 @@ onMounted(restore)
     <HeroSection />
     <ProjectsSection />
     <ExperienceSection />
+    <TestimonialSection />
     <DataSection />
     <AboutSection />
   </main>

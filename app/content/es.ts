@@ -239,6 +239,15 @@ export const es: SiteContent = {
       },
     ],
   },
+  testimonial: {
+    eyebrow: 'Recomendación',
+    quote:
+      'Llevó adelante, de principio a fin y de manera autónoma, un proyecto grande y técnicamente exigente. Su código es ordenado, legible y fácil de mantener, y nunca da un trabajo por terminado hasta asegurarse de que realmente funciona. Cuando se topa con algo que no domina, lo reconoce con honestidad y se pone a aprenderlo hasta resolverlo.',
+    name: 'Alan Graef',
+    role: 'Sr. Full-Stack Developer (IFC)',
+    relation: 'socio en Teros',
+    note: 'Fragmento de su carta de recomendación (julio de 2026). Carta completa y contacto de referencia disponibles a pedido.',
+  },
   data: {
     eyebrow: 'Datos',
     title: 'También trabajo con datos',

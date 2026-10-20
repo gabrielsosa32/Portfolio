@@ -95,6 +95,21 @@ describe('contenido ES/EN', () => {
     expect(en.projects.botDemo.messages.map(m => m.from)).toEqual(es.projects.botDemo.messages.map(m => m.from))
   })
 
+  test('la recomendación es de Alan, dice que es socio y en inglés aclara que es traducción', () => {
+    expect(es.testimonial.name).toBe('Alan Graef')
+    expect(en.testimonial.name).toBe('Alan Graef')
+    expect(es.testimonial.relation).toMatch(/socio/i)
+    expect(en.testimonial.relation).toMatch(/partner/i)
+    expect(en.testimonial.note).toMatch(/translat/i)
+    expect(es.testimonial.quote.length).toBeGreaterThan(80)
+  })
+
+  test.each(langs)('%s no publica datos de contacto de terceros', (_, c) => {
+    for (const s of allStrings(c)) {
+      expect(s).not.toMatch(/graefalan|216\s?7903/i)
+    }
+  })
+
   test('el CV apunta a un PDF por idioma', () => {
     expect(es.hero.cvHref).toBe('/cv/gabriel-sosa-cv-es.pdf')
     expect(en.hero.cvHref).toBe('/cv/gabriel-sosa-cv-en.pdf')

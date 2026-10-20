@@ -47,6 +47,16 @@ export interface ExperienceItem {
   points: string[]
 }
 
+export interface Testimonial {
+  eyebrow: string
+  quote: string
+  name: string
+  role: string
+  relation: string
+  /** Aclaración debajo (traducción, carta completa a pedido). */
+  note: string
+}
+
 export interface SiteContent {
   meta: { title: string; description: string }
   nav: { projects: string; experience: string; data: string; about: string; contact: string; switchLang: string }
@@ -80,6 +90,7 @@ export interface SiteContent {
     title: string
     items: ExperienceItem[]
   }
+  testimonial: Testimonial
   data: {
     eyebrow: string
     title: string
