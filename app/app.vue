@@ -1,5 +1,27 @@
+<script setup lang="ts">
+const { lang, content, restore } = useLang()
+
+useHead(() => ({
+  htmlAttrs: { lang: lang.value },
+  title: content.value.meta.title,
+  meta: [{ name: 'description', content: content.value.meta.description }],
+}))
+
+onMounted(restore)
+</script>
+
 <template>
-  <main class="container">
-    <h1>Gabriel Sosa</h1>
+  <SiteNav />
+  <main>
+    <HeroSection />
+    <ProjectsSection />
+    <DataSection />
+    <AboutSection />
   </main>
+  <ContactSection />
 </template>
+
+<style>
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s cubic-bezier(.2, .8, .2, 1); }
+.reveal.is-revealed { opacity: 1; transform: none; }
+</style>
