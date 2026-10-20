@@ -2,27 +2,23 @@
 import { splitWords } from '~/utils/words'
 
 const props = defineProps<{ lead: string; highlight: string }>()
-const leadWords = computed(() => splitWords(props.lead))
-const highlightWords = computed(() => splitWords(props.highlight))
+const words = computed(() => [
+  ...splitWords(props.lead).map(text => ({ text, hl: false })),
+  ...splitWords(props.highlight).map(text => ({ text, hl: true })),
+])
 const full = computed(() => `${props.lead} ${props.highlight}`)
 </script>
 
 <template>
   <h1 class="title" :aria-label="full">
-    <span
-      v-for="(w, i) in leadWords"
-      :key="`l${i}`"
-      class="word"
-      aria-hidden="true"
-      :style="{ animationDelay: `${i * 90}ms` }"
-    >{{ w }} </span>
-    <span
-      v-for="(w, i) in highlightWords"
-      :key="`h${i}`"
-      class="word word--hl"
-      aria-hidden="true"
-      :style="{ animationDelay: `${(leadWords.length + i) * 90}ms` }"
-    >{{ w }} </span>
+    <template v-for="(w, i) in words" :key="i">
+      <span
+        class="word"
+        :class="{ 'word--hl': w.hl }"
+        aria-hidden="true"
+        :style="{ animationDelay: `${i * 90}ms` }"
+      >{{ w.text }}</span>{{ ' ' }}
+    </template>
   </h1>
 </template>
 
@@ -32,13 +28,14 @@ const full = computed(() => `${props.lead} ${props.highlight}`)
   max-width: 15ch;
 }
 .word {
-  display: inline-block; white-space: pre;
+  display: inline-block;
   opacity: 0; transform: translateY(24px) rotate(4deg);
   animation: word-in .7s cubic-bezier(.2, .8, .2, 1) forwards;
 }
 .word--hl {
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
   -webkit-background-clip: text; background-clip: text; color: transparent;
+  padding-bottom: .06em;
 }
 @keyframes word-in { to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
