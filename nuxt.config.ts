@@ -36,7 +36,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       /** Nombre de la cuenta de GoatCounter (https://<nombre>.goatcounter.com). Vacío = sin contador. */
-      goatcounter: '',
+      goatcounter: 'gabrielsosa32',
     },
   },
   nitro: {
