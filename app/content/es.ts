@@ -101,7 +101,7 @@ export const es: SiteContent = {
         tagline: 'Marketplace de arreglos de techos donde cada trabajo queda documentado y construye reputación.',
         stack: ['Nuxt 4', 'TypeScript', 'Prisma', 'PostgreSQL', 'Playwright', 'Leaflet'],
         image: '/img/projects/techos.webp',
-        imageAlt: 'Pantalla de Techos',
+        imageAlt: 'Presupuesto de Techos compartido por link, con ítems, subtotales y total (datos de demostración)',
         problem:
           'Quien tiene una gotera no sabe a quién llamar ni cuánto debería costar, y el buen techista no tiene cómo demostrar sus trabajos anteriores. Los presupuestos se pasan por WhatsApp y no queda registro de lo que se le hizo a cada casa.',
         built: [

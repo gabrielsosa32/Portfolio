@@ -101,7 +101,7 @@ export const en: SiteContent = {
         tagline: 'A roof-repair marketplace where every job is documented and builds reputation.',
         stack: ['Nuxt 4', 'TypeScript', 'Prisma', 'PostgreSQL', 'Playwright', 'Leaflet'],
         image: '/img/projects/techos.webp',
-        imageAlt: 'Techos screen',
+        imageAlt: 'A Techos quote shared by link, with line items, subtotals and total (demo data)',
         problem:
           "When your roof leaks you don't know who to call or what it should cost, and a good roofer has no way to prove their past work. Quotes get sent over WhatsApp and there's no record of what was done to each house.",
         built: [
