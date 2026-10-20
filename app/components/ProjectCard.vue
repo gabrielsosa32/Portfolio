@@ -1,14 +1,18 @@
 <script setup lang="ts">
-import type { Project } from '~/content/types'
+import type { BotDemo, Project } from '~/content/types'
 
-defineProps<{ project: Project; liveLabel: string; pilotLabel: string; inProgressLabel: string; moreLabel: string }>()
+defineProps<{ project: Project; liveLabel: string; pilotLabel: string; inProgressLabel: string; moreLabel: string; demo?: BotDemo }>()
 defineEmits<{ open: [] }>()
 const asset = useAsset()
 </script>
 
 <template>
   <article class="card pcard">
-    <button type="button" class="pcard__shot" :aria-label="`${moreLabel}: ${project.name}`" @click="$emit('open')">
+    <!-- Con demo, el área de la imagen es un contenedor y no un botón: un <button> no puede tener bloques adentro. -->
+    <div v-if="demo" class="pcard__shot">
+      <BotChatDemo :demo="demo" />
+    </div>
+    <button v-else type="button" class="pcard__shot" :aria-label="`${moreLabel}: ${project.name}`" @click="$emit('open')">
       <img :src="asset(project.image)" :alt="project.imageAlt" width="1280" height="800" loading="lazy">
     </button>
     <div class="pcard__body">

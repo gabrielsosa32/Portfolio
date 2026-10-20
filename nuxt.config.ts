@@ -33,6 +33,12 @@ export default defineNuxtConfig({
       ],
     },
   },
+  runtimeConfig: {
+    public: {
+      /** Nombre de la cuenta de GoatCounter (https://<nombre>.goatcounter.com). Vacío = sin contador. */
+      goatcounter: '',
+    },
+  },
   nitro: {
     prerender: { routes: ['/'] },
   },

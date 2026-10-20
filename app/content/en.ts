@@ -6,7 +6,7 @@ export const en: SiteContent = {
     description:
       'Full-Stack Developer based in Argentina. I build complete products, from idea to production: payments, AI bots, QR flows and ESP32 firmware.',
   },
-  nav: { projects: 'Projects', data: 'Data', about: 'About', contact: 'Contact', switchLang: 'Switch language to Spanish' },
+  nav: { projects: 'Projects', experience: 'Experience', data: 'Data', about: 'About', contact: 'Contact', switchLang: 'Switch language to Spanish' },
   hero: {
     role: 'Full-Stack Developer',
     location: 'Funes, Santa Fe, Argentina',
@@ -178,6 +178,20 @@ export const en: SiteContent = {
         ],
       },
     ],
+    botDemo: {
+      business: 'Demo Barbershop',
+      status: 'online',
+      label: 'Teros Reservas bot demo',
+      caption: 'Sample conversation with made-up data.',
+      messages: [
+        { from: 'user', text: 'Hi! Do you have a haircut slot tomorrow?' },
+        { from: 'bot', text: 'Hi! Tomorrow I have 10:00, 11:30 or 17:00 open. Which one works for you? 💈' },
+        { from: 'user', text: '11:30' },
+        { from: 'bot', text: "I'll book you tomorrow at 11:30 for a haircut. Shall I confirm?" },
+        { from: 'user', text: 'Yes, please' },
+        { from: 'bot', text: '✅ Done, you are booked. To secure the slot, here is the Mercado Pago link for the deposit 👇' },
+      ],
+    },
     others: [
       {
         name: 'Avatar Companion',
@@ -190,6 +204,38 @@ export const en: SiteContent = {
         description:
           'Scrapers that build prospect lists (sports courts, barbershops, clinics) from Google Maps and OpenStreetMap, ranked by a rating and reviews score.',
         stack: ['Python', 'Playwright', 'OpenStreetMap'],
+      },
+    ],
+  },
+  experience: {
+    eyebrow: 'Experience',
+    title: 'Where I have worked',
+    items: [
+      {
+        role: 'Full-Stack Developer',
+        org: 'Teros',
+        period: '2026 – present',
+        points: [
+          'Lead developer of five products: Pases, Teros Reservas, Techos, Plugo and the Resortes NV website.',
+          'End to end: data model, Mercado Pago payments, AI agents, ESP32 firmware, tests, CI and deployment.',
+        ],
+      },
+      {
+        role: 'Junior Data Analyst',
+        org: 'THV Ingeniería',
+        period: '2025',
+        points: [
+          'Designed a relational database for project tracking and cleaned and normalized historical data.',
+          'Built Tableau dashboards for costs and delivery times.',
+        ],
+      },
+      {
+        role: 'Data Analyst (volunteer)',
+        org: 'Municipality of Funes',
+        period: '2025',
+        points: [
+          'Consolidated 12 monthly medical appointment reports (22 specialties) into a Power BI dashboard that exposed overloaded and underused departments.',
+        ],
       },
     ],
   },
@@ -247,7 +293,7 @@ export const en: SiteContent = {
     title: 'I own the whole cycle',
     paragraphs: [
       "I'm a full-stack developer at Teros, where I built five products: three are in production, one is piloting and one has its MVP in staging. I handle the data model, Mercado Pago payments, AI integration, firmware, tests and deployment.",
-      'Before that I worked as a data analyst: I designed a relational database and Tableau dashboards at THV Ingeniería, and in a volunteer project for the Municipality of Funes I consolidated medical appointment reports into a Power BI dashboard. I hold a higher technical degree in Software Development and I am studying Data Science at UNR.',
+      'I come from data analysis, and it shows in how I design data models and measure results. I hold an associate degree (Técnico Superior) in Software Development and I am studying for a degree in Data Science at UNR.',
       "When a project needs something I don't know yet, I learn it. That's how I ended up programming an ESP32, wiring an AI agent with tools and setting up marketplace payments.",
     ],
     role: 'Lead developer: I designed and built the products end to end, from the database to deployment. My business partner and I define the product together.',

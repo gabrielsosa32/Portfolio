@@ -62,6 +62,9 @@ function onCancel(e: Event) {
         <button type="button" class="panel__close" :aria-label="t.close" @click="emit('close')">✕</button>
       </header>
 
+      <div v-if="project.id === 'reservas'" class="panel__demo">
+        <BotChatDemo :demo="t.botDemo" />
+      </div>
       <img class="panel__shot" :src="asset(project.image)" :alt="project.imageAlt" width="1280" height="800">
 
       <div class="panel__meta">
@@ -122,6 +125,7 @@ function onCancel(e: Event) {
   flex: none; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--border);
   background: var(--card); font-size: 16px; cursor: pointer; color: var(--fg);
 }
+.panel__demo { margin-top: 20px; height: 360px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
 .panel__shot { width: 100%; height: auto; margin-top: 20px; border-radius: 12px; border: 1px solid var(--border); }
 .panel__meta { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; margin-top: 16px; }
 .panel__pilot { font-size: 12px; font-weight: 600; color: var(--muted); border: 1px solid var(--border); border-radius: 999px; padding: 3px 9px; }

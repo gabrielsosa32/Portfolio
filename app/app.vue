@@ -1,5 +1,9 @@
 <script setup lang="ts">
+import { goatcounterScript } from '~/utils/analytics'
+
 const { lang, content, restore } = useLang()
+const counter = goatcounterScript(useRuntimeConfig().public.goatcounter)
+if (counter) useHead({ script: [counter] })
 
 useHead(() => ({
   htmlAttrs: { lang: lang.value },
@@ -19,6 +23,7 @@ onMounted(restore)
   <main>
     <HeroSection />
     <ProjectsSection />
+    <ExperienceSection />
     <DataSection />
     <AboutSection />
   </main>

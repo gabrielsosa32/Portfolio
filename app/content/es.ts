@@ -6,7 +6,7 @@ export const es: SiteContent = {
     description:
       'Desarrollador Full-Stack en Funes, Santa Fe. Construyo productos completos, de la idea a producción: pagos con Mercado Pago, bots con IA, QR y firmware para ESP32.',
   },
-  nav: { projects: 'Proyectos', data: 'Datos', about: 'Sobre mí', contact: 'Contacto', switchLang: 'Cambiar idioma a inglés' },
+  nav: { projects: 'Proyectos', experience: 'Experiencia', data: 'Datos', about: 'Sobre mí', contact: 'Contacto', switchLang: 'Cambiar idioma a inglés' },
   hero: {
     role: 'Desarrollador Full-Stack',
     location: 'Funes, Santa Fe, Argentina',
@@ -178,6 +178,20 @@ export const es: SiteContent = {
         ],
       },
     ],
+    botDemo: {
+      business: 'Barbería Demo',
+      status: 'en línea',
+      label: 'Demostración del bot de Teros Reservas',
+      caption: 'Conversación de ejemplo, con datos inventados.',
+      messages: [
+        { from: 'user', text: 'Hola! Tenés turno para corte mañana?' },
+        { from: 'bot', text: '¡Hola! Mañana tengo libre a las 10:00, 11:30 o 17:00. ¿Cuál te queda mejor? 💈' },
+        { from: 'user', text: '11:30' },
+        { from: 'bot', text: 'Te reservo mañana a las 11:30, corte de pelo. ¿Lo confirmo?' },
+        { from: 'user', text: 'Dale, sí' },
+        { from: 'bot', text: '✅ Listo, quedó confirmado. Para asegurar el turno, te paso el link de Mercado Pago para la seña 👇' },
+      ],
+    },
     others: [
       {
         name: 'Avatar Companion',
@@ -190,6 +204,38 @@ export const es: SiteContent = {
         description:
           'Scrapers que arman listas de prospectos (canchas, barberías, clínicas) desde Google Maps y OpenStreetMap, ordenadas por un puntaje de rating y reseñas.',
         stack: ['Python', 'Playwright', 'OpenStreetMap'],
+      },
+    ],
+  },
+  experience: {
+    eyebrow: 'Experiencia',
+    title: 'Dónde trabajé',
+    items: [
+      {
+        role: 'Desarrollador Full-Stack',
+        org: 'Teros',
+        period: '2026 – actualidad',
+        points: [
+          'Desarrollador principal de cinco productos: Pases, Teros Reservas, Techos, Plugo y el sitio de Resortes NV.',
+          'De punta a punta: modelo de datos, pagos con Mercado Pago, agentes de IA, firmware ESP32, tests, CI y despliegue.',
+        ],
+      },
+      {
+        role: 'Junior Data Analyst',
+        org: 'THV Ingeniería',
+        period: '2025',
+        points: [
+          'Diseñé una base relacional para el registro de proyectos y limpié y normalicé datos históricos.',
+          'Armé dashboards en Tableau de costos y tiempos de entrega.',
+        ],
+      },
+      {
+        role: 'Data Analyst (voluntario)',
+        org: 'Municipalidad de Funes',
+        period: '2025',
+        points: [
+          'Consolidé 12 reportes mensuales de turnos médicos (22 especialidades) en un tablero de Power BI que mostró sectores sobrecargados y con baja actividad.',
+        ],
       },
     ],
   },
@@ -247,7 +293,7 @@ export const es: SiteContent = {
     title: 'Me ocupo de todo el ciclo',
     paragraphs: [
       'Soy desarrollador full-stack en Teros. Ahí construí cinco productos: tres ya están en producción, uno en piloto y otro con el MVP en staging. Me ocupo del modelo de datos, los pagos con Mercado Pago, la integración de IA, el firmware, los tests y el despliegue.',
-      'Antes trabajé como analista de datos: diseñé una base relacional y dashboards en Tableau en THV Ingeniería, y en un proyecto voluntario para la Municipalidad de Funes consolidé reportes de turnos médicos en un tablero de Power BI. Soy Técnico Superior en Desarrollo de Software y estudio la Licenciatura en Ciencia de Datos en la UNR.',
+      'Vengo del análisis de datos, y eso se nota en cómo diseño los modelos y mido los resultados. Soy Técnico Superior en Desarrollo de Software y estudio la Licenciatura en Ciencia de Datos en la UNR.',
       'Cuando un proyecto necesita algo que no sé, lo aprendo: así llegué a programar un ESP32, integrar un agente de IA con herramientas o montar pagos marketplace.',
     ],
     role: 'Desarrollador principal: diseñé y programé los productos de punta a punta, de la base de datos al despliegue. Las ideas de producto las definimos con mi socio.',

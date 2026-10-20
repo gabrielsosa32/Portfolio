@@ -61,6 +61,7 @@ onBeforeUnmount(() => {
           :pilot-label="t.pilot"
           :in-progress-label="t.inProgress"
           :more-label="t.more"
+          :demo="p.id === 'reservas' ? t.botDemo : undefined"
           @open="open(p.id)"
         />
       </div>

@@ -9,6 +9,7 @@ const nav = computed(() => content.value.nav)
       <a href="#top" class="nav__name">Gabriel Sosa</a>
       <nav class="nav__links" aria-label="Secciones">
         <a href="#proyectos">{{ nav.projects }}</a>
+        <a href="#experiencia">{{ nav.experience }}</a>
         <a href="#datos">{{ nav.data }}</a>
         <a href="#sobre-mi">{{ nav.about }}</a>
         <a href="#contacto">{{ nav.contact }}</a>

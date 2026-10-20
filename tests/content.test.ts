@@ -77,6 +77,24 @@ describe('contenido ES/EN', () => {
     expect(en.about.role.toLowerCase()).toContain('lead developer')
   })
 
+  test('la experiencia tiene los mismos puestos y fechas en ambos idiomas, del más reciente al más viejo', () => {
+    const orgs = ['Teros', 'THV Ingeniería', 'Municipalidad de Funes']
+    expect(es.experience.items.map(i => i.org)).toEqual(orgs)
+    expect(en.experience.items.map(i => i.org)).toEqual(orgs.map(o => o === 'Municipalidad de Funes' ? 'Municipality of Funes' : o))
+    expect(en.experience.items.map(i => i.period)).toEqual(es.experience.items.map(i => i.period.replace('actualidad', 'present')))
+    for (const i of es.experience.items) expect(i.points.length).toBeGreaterThanOrEqual(1)
+  })
+
+  test('la demo del bot es una conversación que arranca el cliente y termina el bot, igual en ambos idiomas', () => {
+    for (const c of [es, en]) {
+      const m = c.projects.botDemo.messages
+      expect(m.length).toBeGreaterThanOrEqual(4)
+      expect(m[0]!.from).toBe('user')
+      expect(m.at(-1)!.from).toBe('bot')
+    }
+    expect(en.projects.botDemo.messages.map(m => m.from)).toEqual(es.projects.botDemo.messages.map(m => m.from))
+  })
+
   test('el CV apunta a un PDF por idioma', () => {
     expect(es.hero.cvHref).toBe('/cv/gabriel-sosa-cv-es.pdf')
     expect(en.hero.cvHref).toBe('/cv/gabriel-sosa-cv-en.pdf')

@@ -31,9 +31,25 @@ export interface DataProject {
   repo?: string
 }
 
+export interface BotDemo {
+  /** Nombre del negocio de ejemplo que aparece arriba del chat. */
+  business: string
+  status: string
+  label: string
+  caption: string
+  messages: { from: 'user' | 'bot'; text: string }[]
+}
+
+export interface ExperienceItem {
+  role: string
+  org: string
+  period: string
+  points: string[]
+}
+
 export interface SiteContent {
   meta: { title: string; description: string }
-  nav: { projects: string; data: string; about: string; contact: string; switchLang: string }
+  nav: { projects: string; experience: string; data: string; about: string; contact: string; switchLang: string }
   hero: {
     role: string
     location: string
@@ -57,6 +73,12 @@ export interface SiteContent {
     labels: { problem: string; built: string; hard: string; result: string; visit: string }
     main: Project[]
     others: MiniProject[]
+    botDemo: BotDemo
+  }
+  experience: {
+    eyebrow: string
+    title: string
+    items: ExperienceItem[]
   }
   data: {
     eyebrow: string

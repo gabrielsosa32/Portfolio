@@ -5,7 +5,7 @@ const contact = computed(() => content.value.contact)
 const asset = useAsset()
 
 /** Cuando Gabriel pase su foto: guardarla en public/img/photo.webp y poner la ruta acá. */
-const photo = ''
+const photo = '/img/photo.webp'
 </script>
 
 <template>
@@ -13,7 +13,7 @@ const photo = ''
     <NetworkBackground />
     <div class="container hero__inner">
       <div class="hero__id">
-        <img v-if="photo" :src="asset(photo)" alt="Gabriel Sosa" class="avatar" width="72" height="72">
+        <img v-if="photo" :src="asset(photo)" alt="Gabriel Sosa" class="avatar" width="88" height="88">
         <div v-else class="avatar avatar--initials" aria-hidden="true">GS</div>
         <p class="hero__role">
           {{ hero.role }}<span class="dot" aria-hidden="true"> · </span><span class="hero__loc">{{ hero.location }}</span>
@@ -40,7 +40,7 @@ const photo = ''
 .hero__inner { position: relative; padding-top: 56px; padding-bottom: 88px; }
 @media (min-width: 768px) { .hero__inner { padding-top: 96px; padding-bottom: 128px; } }
 .hero__id { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
-.avatar { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; flex: none; border: 3px solid var(--border-strong); box-shadow: var(--shadow); }
+.avatar { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; flex: none; border: 3px solid var(--border-strong); box-shadow: var(--shadow); }
 .avatar--initials {
   display: grid; place-items: center; font-weight: 700; font-size: 22px; color: var(--muted);
   background: linear-gradient(135deg, #292524, #1c1917);
