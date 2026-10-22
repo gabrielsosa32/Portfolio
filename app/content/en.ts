@@ -39,7 +39,7 @@ export const en: SiteContent = {
   projects: {
     eyebrow: 'Projects',
     title: 'How I built them',
-    intro: 'The same products from above, from the inside: the problem each one solves, what is behind it and the hardest part. All built at Teros.',
+    intro: 'The products from above (plus the Resortes NV website), from the inside: the problem each one solves, what is behind it and the hardest part. All built at Teros.',
     more: 'Read more',
     close: 'Close',
     live: 'in production',
