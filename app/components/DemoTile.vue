@@ -18,7 +18,6 @@ function onKey(e: KeyboardEvent) {
     class="tile"
     role="button"
     tabindex="0"
-    :aria-label="`${moreLabel}: ${project.name}`"
     @click="open(project.id)"
     @keydown="onKey"
   >
@@ -27,6 +26,7 @@ function onKey(e: KeyboardEvent) {
       <span class="tile__status" :class="{ 'tile__status--live': project.status === 'live' }">
         <span aria-hidden="true">●</span> {{ statusLabel }}
       </span>
+      <span class="visually-hidden">— {{ moreLabel }}</span>
     </div>
     <div class="tile__body" aria-hidden="true">
       <slot />
