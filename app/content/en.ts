@@ -38,8 +38,8 @@ export const en: SiteContent = {
   },
   projects: {
     eyebrow: 'Projects',
-    title: 'Real products, in production',
-    intro: 'Built at Teros. Click any of them to see the problem, what I built and the hardest parts.',
+    title: 'How I built them',
+    intro: 'The same products from above, from the inside: the problem each one solves, what is behind it and the hardest part. All built at Teros.',
     more: 'Read more',
     close: 'Close',
     live: 'in production',

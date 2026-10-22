@@ -38,8 +38,8 @@ export const es: SiteContent = {
   },
   projects: {
     eyebrow: 'Proyectos',
-    title: 'Productos reales, en producción',
-    intro: 'Desarrollados en Teros. Hacé clic en cada uno para ver el problema, qué construí y lo más difícil.',
+    title: 'Cómo los construí',
+    intro: 'Los mismos productos de arriba, por dentro: qué problema resuelven, qué hay detrás y lo más difícil de cada uno. Todos desarrollados en Teros.',
     more: 'Ver más',
     close: 'Cerrar',
     live: 'en producción',
