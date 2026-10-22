@@ -19,6 +19,7 @@ onMounted(restore)
 </script>
 
 <template>
+  <SiteBackground />
   <SiteNav />
   <main>
     <HeroSection />

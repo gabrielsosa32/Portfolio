@@ -10,7 +10,6 @@ const photo = '/img/photo.webp'
 
 <template>
   <section id="top" class="hero">
-    <NetworkBackground />
     <div class="container hero__inner">
       <div class="hero__id">
         <img v-if="photo" :src="asset(photo)" alt="Gabriel Sosa" class="avatar" width="88" height="88">

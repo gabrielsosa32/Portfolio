@@ -15,6 +15,8 @@
   --btn-fg: #0c0a09;
   --nav-bg: rgb(12 10 9 / .75);
   --net-rgb: 96, 165, 250;
+  --mono: 'JetBrains Mono', Consolas, 'Cascadia Code', monospace;
+  --amber: #fbbf24;
   --radius: 14px;
   --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 8px 24px rgb(0 0 0 / .35);
   color-scheme: dark;
@@ -42,12 +44,13 @@ a { color: inherit; }
 
 .section { padding: 72px 0; }
 @media (min-width: 768px) { .section { padding: 104px 0; } }
-.section--alt { background: var(--bg-alt); }
+.section--alt { background: rgb(18 16 14 / .72); }
 
 .eyebrow {
-  font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+  font-family: var(--mono); font-size: 13px; font-weight: 500; letter-spacing: .02em;
   color: var(--accent); margin-bottom: 10px;
 }
+.eyebrow::before { content: '// '; color: var(--muted); }
 .section-title { font-size: clamp(26px, 4vw, 36px); line-height: 1.15; font-weight: 700; letter-spacing: -.02em; }
 .section-intro { color: var(--fg-2); margin-top: 12px; max-width: 640px; }
 
