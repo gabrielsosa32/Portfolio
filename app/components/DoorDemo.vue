@@ -71,7 +71,7 @@ onBeforeUnmount(clear)
 <style scoped>
 .door { position: absolute; inset: 0; display: grid; place-items: center; background: #0f0d1a; }
 .door__event { position: absolute; top: 8px; left: 10px; margin: 0; font-family: var(--mono); font-size: 10px; color: var(--muted); }
-.door__qr { position: relative; width: min(46%, 130px); aspect-ratio: 1; border-radius: 6px; overflow: hidden; }
+.door__qr { position: relative; width: min(52%, 170px); aspect-ratio: 1; border-radius: 6px; overflow: hidden; }
 .door__qr svg { width: 100%; height: 100%; display: block; }
 .door__scan {
   position: absolute; left: 0; right: 0; top: 0; height: 100%;

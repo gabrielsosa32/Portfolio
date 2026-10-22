@@ -5,7 +5,7 @@ const nav = computed(() => content.value.nav)
 
 <template>
   <header class="nav">
-    <div class="container nav__inner">
+    <div class="container container--wide nav__inner">
       <a href="#top" class="nav__name">Gabriel Sosa</a>
       <nav class="nav__links" aria-label="Secciones">
         <a href="#proyectos">{{ nav.projects }}</a>

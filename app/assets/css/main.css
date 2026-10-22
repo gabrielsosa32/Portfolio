@@ -39,8 +39,11 @@ img { max-width: 100%; display: block; }
 a { color: inherit; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
 
-.container { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 16px; }
 @media (min-width: 768px) { .container { padding: 0 32px; } }
+@media (min-width: 1440px) { .container { padding: 0 48px; } }
+/* La portada usa más ancho: en pantallas grandes el panel en vivo ocupa la pantalla. */
+.container--wide { max-width: 1520px; }
 
 .section { padding: 72px 0; }
 @media (min-width: 768px) { .section { padding: 104px 0; } }

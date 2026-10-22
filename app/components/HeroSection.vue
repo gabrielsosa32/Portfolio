@@ -23,7 +23,7 @@ function statusLabel(p: Project) {
 
 <template>
   <section id="top" class="hero">
-    <div class="container hero__inner">
+    <div class="container container--wide hero__inner">
       <div class="hero__id">
         <div class="hero__who">
           <img :src="asset(photo)" alt="Gabriel Sosa" class="avatar" width="88" height="88">
@@ -89,6 +89,8 @@ function statusLabel(p: Project) {
 @media (min-width: 640px) { .hero__grid { grid-template-columns: 1fr 1fr; } }
 .hero__grid > * { height: 220px; }
 @media (min-width: 1024px) { .hero__grid > * { height: 240px; } }
+@media (min-width: 1440px) { .hero__grid > * { height: 290px; } .hero__inner { grid-template-columns: minmax(300px, 1fr) 2.4fr; gap: 56px; } }
+@media (min-width: 1800px) { .hero__grid > * { height: 330px; } }
 .hero__note { margin-top: 10px; font-family: var(--mono); font-size: 12px; color: var(--muted); text-align: right; }
 .hero__note::before { content: '* '; }
 </style>
