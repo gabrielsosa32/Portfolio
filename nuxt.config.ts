@@ -9,8 +9,9 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   fonts: {
     families: [
-      { name: 'Inter', provider: 'google', weights: [400, 500, 600, 700] },
-      { name: 'JetBrains Mono', provider: 'google', weights: [400, 500, 700] },
+      // Inter se precarga: es la letra del nombre en la portada (el elemento más grande al cargar).
+      { name: 'Inter', provider: 'google', weights: [400, 500, 600, 700], styles: ['normal'], subsets: ['latin'], preload: true },
+      { name: 'JetBrains Mono', provider: 'google', weights: [400, 500, 700], styles: ['normal'], subsets: ['latin'] },
     ],
   },
   app: {
