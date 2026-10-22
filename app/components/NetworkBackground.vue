@@ -5,6 +5,10 @@ import { createNodes, linkAlpha, nodeCountFor, stepNodes, type NetNode } from '~
 const canvas = ref<HTMLCanvasElement | null>(null)
 const LINK_DIST = 120
 let cleanup: (() => void) | null = null
+// Con el panel "Ver más" abierto el fondo queda tapado: se pausa para no gastar en lo que no se ve.
+const { openId } = usePanel()
+let control: { start: () => void; stop: () => void } | null = null
+watch(openId, id => (id ? control?.stop() : control?.start()))
 
 onMounted(() => {
   const el = canvas.value
@@ -64,7 +68,7 @@ onMounted(() => {
     raf = requestAnimationFrame(loop)
   }
   function start() {
-    if (reduced || raf || document.hidden) return
+    if (reduced || raf || document.hidden || openId.value) return
     raf = requestAnimationFrame(loop)
   }
   function stop() {
@@ -83,6 +87,7 @@ onMounted(() => {
   document.documentElement.addEventListener('pointerleave', onLeave)
   document.addEventListener('visibilitychange', onVisibility)
 
+  control = { start, stop }
   resize()
   start()
 

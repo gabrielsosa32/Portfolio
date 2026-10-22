@@ -7,3 +7,8 @@ test('anima solo si está en pantalla, la pestaña está visible y no hay reduci
   expect(shouldAnimate({ visible: true, hidden: true, reduced: false })).toBe(false)
   expect(shouldAnimate({ visible: true, hidden: false, reduced: true })).toBe(false)
 })
+
+test('no anima si está en pausa (por ejemplo, la portada tapada por el panel abierto)', () => {
+  expect(shouldAnimate({ visible: true, hidden: false, reduced: false, paused: true })).toBe(false)
+  expect(shouldAnimate({ visible: true, hidden: false, reduced: false, paused: false })).toBe(true)
+})

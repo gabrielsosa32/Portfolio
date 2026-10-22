@@ -46,7 +46,7 @@ const sheet = computed(() => [
 <style scoped>
 .case {
   display: grid; gap: 0; border: 1px solid var(--border-strong); border-radius: 14px; overflow: hidden;
-  background: rgb(28 25 23 / .88); backdrop-filter: blur(2px);
+  background: rgb(28 25 23 / .88);
 }
 @media (min-width: 900px) {
   .case { grid-template-columns: 1.1fr 1fr; }

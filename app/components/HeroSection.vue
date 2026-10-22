@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Project, ProjectId } from '~/content/types'
+import { DEMO_PAUSED } from '~/composables/useInView'
 
 const { lang, content } = useLang()
 const hero = computed(() => content.value.hero)
@@ -8,6 +9,10 @@ const projects = computed(() => content.value.projects)
 const asset = useAsset()
 
 const photo = '/img/photo.webp'
+
+// Con el panel "Ver más" abierto, las demos de la portada quedan tapadas: se pausan.
+const { openId } = usePanel()
+provide(DEMO_PAUSED, computed(() => openId.value !== null))
 
 const byId = (id: ProjectId) => projects.value.main.find(p => p.id === id)!
 function statusLabel(p: Project) {

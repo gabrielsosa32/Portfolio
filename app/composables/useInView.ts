@@ -1,15 +1,19 @@
-import type { Ref } from 'vue'
+import type { InjectionKey, Ref } from 'vue'
 import { shouldAnimate } from '~/utils/demos'
 
 /**
  * `active` es true mientras el elemento está en pantalla, la pestaña está visible y no se pidió
  * reducir movimiento. Las demos arrancan su loop cuando pasa a true y lo cortan cuando pasa a false.
  */
+/** Clave para que un contenedor (la portada) pause las demos que tiene adentro. */
+export const DEMO_PAUSED = Symbol('demo-paused') as InjectionKey<Ref<boolean>>
+
 export function useInView(target: Ref<HTMLElement | null>, opts: { threshold?: number } = {}) {
+  const paused = inject(DEMO_PAUSED, ref(false))
   const visible = ref(false)
   const hidden = ref(false)
   const reduced = ref(false)
-  const active = computed(() => shouldAnimate({ visible: visible.value, hidden: hidden.value, reduced: reduced.value }))
+  const active = computed(() => shouldAnimate({ visible: visible.value, hidden: hidden.value, reduced: reduced.value, paused: paused.value }))
 
   let io: IntersectionObserver | null = null
   const onVisibility = () => { hidden.value = document.hidden }

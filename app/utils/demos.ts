@@ -23,7 +23,10 @@ export function formatMoney(n: number, lang: Lang): string {
   return `$ ${n.toLocaleString(lang === 'es' ? 'es-AR' : 'en-US')}`
 }
 
-/** Las demos se mueven solo si están en pantalla, la pestaña se ve y no se pidió reducir movimiento. */
-export function shouldAnimate(s: { visible: boolean; hidden: boolean; reduced: boolean }): boolean {
-  return s.visible && !s.hidden && !s.reduced
+/**
+ * Las demos se mueven solo si están en pantalla, la pestaña se ve, no se pidió reducir movimiento
+ * y no están en pausa (p. ej. la portada tapada por el panel "Ver más").
+ */
+export function shouldAnimate(s: { visible: boolean; hidden: boolean; reduced: boolean; paused?: boolean }): boolean {
+  return s.visible && !s.hidden && !s.reduced && !s.paused
 }

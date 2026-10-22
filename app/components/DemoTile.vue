@@ -58,4 +58,6 @@ function onKey(e: KeyboardEvent) {
   background: rgb(0 0 0 / .65); padding: 3px 8px; border-radius: 6px; opacity: 0; transition: opacity .2s;
 }
 .tile:hover .tile__more, .tile:focus-visible .tile__more { opacity: 1; }
+/* En pantallas táctiles no hay hover: el "Ver más" se muestra siempre para que se entienda que se puede tocar. */
+@media (hover: none), (max-width: 1023px) { .tile__more { opacity: 1; } }
 </style>

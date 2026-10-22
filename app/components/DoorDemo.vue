@@ -42,7 +42,6 @@ watch([active, () => props.demo], ([on]) => {
   clear()
   ok.value = false
   if (on) cycle()
-  else if (reduced.value) ok.value = true
 }, { immediate: true })
 onBeforeUnmount(clear)
 </script>
@@ -60,7 +59,7 @@ onBeforeUnmount(clear)
           <rect :x="fx + 2" :y="fy + 2" width="3" height="3" fill="#0c0a09" />
         </g>
       </svg>
-      <span v-if="!reduced" class="door__scan" />
+      <span v-if="!reduced" class="door__scan" :class="{ 'door__scan--paused': !active }" />
     </div>
     <div class="door__ok" :class="{ on: ok }">{{ demo.verdict }}</div>
     <p class="door__count">{{ demo.countLabel }}: <b>{{ count }}</b></p>
@@ -73,10 +72,13 @@ onBeforeUnmount(clear)
 .door__qr { position: relative; width: min(46%, 130px); aspect-ratio: 1; border-radius: 6px; overflow: hidden; }
 .door__qr svg { width: 100%; height: 100%; display: block; }
 .door__scan {
-  position: absolute; left: 0; right: 0; height: 3px; background: var(--live); box-shadow: 0 0 12px var(--live);
+  position: absolute; left: 0; right: 0; top: 0; height: 100%;
   animation: scan 1.3s ease-in-out infinite alternate;
 }
-@keyframes scan { from { top: 4%; } to { top: 94%; } }
+/* La línea va en un ::before y se mueve con transform (no con top): no fuerza a recalcular el layout. */
+.door__scan::before { content: ''; position: absolute; left: 0; right: 0; top: 4%; height: 3px; background: var(--live); box-shadow: 0 0 12px var(--live); }
+.door__scan--paused { animation-play-state: paused; }
+@keyframes scan { from { transform: translateY(0); } to { transform: translateY(90%); } }
 .door__ok {
   position: absolute; inset: 0; display: grid; place-items: center; background: #16a34a; color: #052e16;
   font-weight: 800; font-size: clamp(20px, 3vw, 32px); letter-spacing: .03em;
