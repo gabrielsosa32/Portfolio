@@ -25,8 +25,9 @@ export function formatMoney(n: number, lang: Lang): string {
 
 /**
  * Las demos se mueven solo si están en pantalla, la pestaña se ve, no se pidió reducir movimiento
- * y no están en pausa (p. ej. la portada tapada por el panel "Ver más").
+ * y no están en pausa (p. ej. la portada tapada por el panel "Ver más"); además esperan a que la página
+ * termine de cargar (`ready`).
  */
-export function shouldAnimate(s: { visible: boolean; hidden: boolean; reduced: boolean; paused?: boolean }): boolean {
-  return s.visible && !s.hidden && !s.reduced && !s.paused
+export function shouldAnimate(s: { visible: boolean; hidden: boolean; reduced: boolean; paused?: boolean; ready?: boolean }): boolean {
+  return s.visible && !s.hidden && !s.reduced && !s.paused && s.ready !== false
 }

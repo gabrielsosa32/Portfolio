@@ -24,6 +24,8 @@ const modules = (() => {
   }
   return cells
 })()
+/** Todos los módulos en un solo trazo SVG: un elemento en lugar de ~230 (menos trabajo de estilo y diseño). */
+const modulesPath = modules.map(m => `M${m.x} ${m.y}h1v1h-1z`).join('')
 const finders = [[0, 0], [SIZE - 7, 0], [0, SIZE - 7]] as const
 
 function clear() {
@@ -52,7 +54,7 @@ onBeforeUnmount(clear)
     <div class="door__qr">
       <svg :viewBox="`-1 -1 ${SIZE + 2} ${SIZE + 2}`" shape-rendering="crispEdges">
         <rect x="-1" y="-1" :width="SIZE + 2" :height="SIZE + 2" fill="#fafaf9" />
-        <rect v-for="(m, i) in modules" :key="i" :x="m.x" :y="m.y" width="1" height="1" fill="#0c0a09" />
+        <path :d="modulesPath" fill="#0c0a09" />
         <g v-for="([fx, fy], i) in finders" :key="`f${i}`">
           <rect :x="fx" :y="fy" width="7" height="7" fill="#0c0a09" />
           <rect :x="fx + 1" :y="fy + 1" width="5" height="5" fill="#fafaf9" />

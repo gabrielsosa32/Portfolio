@@ -10,10 +10,11 @@ export const DEMO_PAUSED = Symbol('demo-paused') as InjectionKey<Ref<boolean>>
 
 export function useInView(target: Ref<HTMLElement | null>, opts: { threshold?: number } = {}) {
   const paused = inject(DEMO_PAUSED, ref(false))
+  const ready = usePageReady()
   const visible = ref(false)
   const hidden = ref(false)
   const reduced = ref(false)
-  const active = computed(() => shouldAnimate({ visible: visible.value, hidden: hidden.value, reduced: reduced.value, paused: paused.value }))
+  const active = computed(() => shouldAnimate({ visible: visible.value, hidden: hidden.value, reduced: reduced.value, paused: paused.value, ready: ready.value }))
 
   let io: IntersectionObserver | null = null
   const onVisibility = () => { hidden.value = document.hidden }

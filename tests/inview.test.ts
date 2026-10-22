@@ -12,3 +12,8 @@ test('no anima si está en pausa (por ejemplo, la portada tapada por el panel ab
   expect(shouldAnimate({ visible: true, hidden: false, reduced: false, paused: true })).toBe(false)
   expect(shouldAnimate({ visible: true, hidden: false, reduced: false, paused: false })).toBe(true)
 })
+
+test('no anima hasta que la página terminó de cargar', () => {
+  expect(shouldAnimate({ visible: true, hidden: false, reduced: false, ready: false })).toBe(false)
+  expect(shouldAnimate({ visible: true, hidden: false, reduced: false, ready: true })).toBe(true)
+})

@@ -7,8 +7,10 @@ const LINK_DIST = 120
 let cleanup: (() => void) | null = null
 // Con el panel "Ver más" abierto el fondo queda tapado: se pausa para no gastar en lo que no se ve.
 const { openId } = usePanel()
+const ready = usePageReady()
 let control: { start: () => void; stop: () => void } | null = null
 watch(openId, id => (id ? control?.stop() : control?.start()))
+watch(ready, r => { if (r) control?.start() })
 
 onMounted(() => {
   const el = canvas.value
@@ -17,6 +19,9 @@ onMounted(() => {
 
   const rgb = getComputedStyle(document.documentElement).getPropertyValue('--net-rgb').trim() || '96, 165, 250'
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  // En pantallas táctiles se dibuja un cuadro de cada dos (~30 fps): el fondo es tenue y no se nota.
+  const touch = window.matchMedia('(pointer: coarse)').matches
+  let frame = 0
   let w = 0, h = 0
   let nodes: NetNode[] = []
   let mouse: { x: number; y: number } | null = null
@@ -63,12 +68,14 @@ onMounted(() => {
   }
 
   function loop() {
-    stepNodes(nodes, w, h, mouse)
-    draw()
+    if (!touch || (frame++ & 1) === 0) {
+      stepNodes(nodes, w, h, mouse)
+      draw()
+    }
     raf = requestAnimationFrame(loop)
   }
   function start() {
-    if (reduced || raf || document.hidden || openId.value) return
+    if (reduced || raf || document.hidden || openId.value || !ready.value) return
     raf = requestAnimationFrame(loop)
   }
   function stop() {
