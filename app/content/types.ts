@@ -27,6 +27,8 @@ export interface MiniProject {
 export interface DataProject {
   name: string
   metric?: string
+  /** 0..1, para la barra del medidor. */
+  score?: number
   description: string
   repo?: string
 }
@@ -39,6 +41,11 @@ export interface BotDemo {
   caption: string
   messages: { from: 'user' | 'bot'; text: string }[]
 }
+
+export interface DoorDemo { label: string; event: string; verdict: string; countLabel: string; startCount: number }
+export interface ChargeDemo { label: string; place: string; status: string; startSeconds: number; paid: string }
+export interface QuoteDemo { label: string; title: string; items: { description: string; amount: number }[]; total: number }
+export interface HeroDemos { note: string; door: DoorDemo; charge: ChargeDemo; quote: QuoteDemo }
 
 export interface ExperienceItem {
   role: string
@@ -69,6 +76,8 @@ export interface SiteContent {
     availability: string
     cta: { cv: string; contact: string }
     cvHref: string
+    intro: string
+    demos: HeroDemos
   }
   projects: {
     eyebrow: string
@@ -80,6 +89,7 @@ export interface SiteContent {
     pilot: string
     inProgress: string
     othersTitle: string
+    caseLabels: { stack: string; hard: string; result: string }
     labels: { problem: string; built: string; hard: string; result: string; visit: string }
     main: Project[]
     others: MiniProject[]

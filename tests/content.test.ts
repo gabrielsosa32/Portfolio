@@ -110,6 +110,32 @@ describe('contenido ES/EN', () => {
     }
   })
 
+  test('el total del presupuesto de demo es la suma de sus ítems', () => {
+    for (const c of [es, en]) {
+      const q = c.hero.demos.quote
+      expect(q.items.reduce((s, i) => s + i.amount, 0)).toBe(q.total)
+      expect(q.total).toBe(1045800)
+    }
+  })
+
+  test('la portada aclara que las demos usan datos de ejemplo y no dice que está todo andando', () => {
+    expect(es.hero.demos.note).toContain('datos de ejemplo')
+    expect(en.hero.demos.note).toContain('sample data')
+    for (const c of [es, en]) {
+      for (const s of allStrings(c.hero)) expect(s).not.toMatch(/andando ahora|running now|en vivo ahora/i)
+    }
+  })
+
+  test('cada proyecto de datos con métrica tiene score entre 0 y 1', () => {
+    for (const c of [es, en]) {
+      for (const d of c.data.projects) {
+        if (!d.metric) continue
+        expect(d.score, d.name).toBeGreaterThan(0)
+        expect(d.score!, d.name).toBeLessThanOrEqual(1)
+      }
+    }
+  })
+
   test('el CV apunta a un PDF por idioma', () => {
     expect(es.hero.cvHref).toBe('/cv/gabriel-sosa-cv-es.pdf')
     expect(en.hero.cvHref).toBe('/cv/gabriel-sosa-cv-en.pdf')

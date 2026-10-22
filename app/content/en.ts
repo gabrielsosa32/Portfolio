@@ -17,6 +17,24 @@ export const en: SiteContent = {
     availability: 'Available · remote or on-site',
     cta: { cv: 'Download CV', contact: 'Contact' },
     cvHref: '/cv/gabriel-sosa-cv-en.pdf',
+    intro: 'I designed and built these products. Click any of them to see how they work.',
+    demos: {
+      note: 'Demos with sample data from real products',
+      door: { label: 'Pases door demo', event: 'Demo Night · Sat 23:30', verdict: 'IN', countLabel: 'check-ins', startCount: 212 },
+      charge: { label: 'Plugo charger demo', place: 'Demo Garage', status: 'CHARGING', startSeconds: 2825, paid: 'You earned $ 2,800 · 1 h' },
+      quote: {
+        label: 'Techos quote demo',
+        title: 'QUOTE',
+        items: [
+          { description: 'Removal of damaged sheets and cleanup', amount: 85000 },
+          { description: 'Galvanized corrugated sheet C25 (24 m²)', amount: 444000 },
+          { description: 'Insulating membrane under sheets (24 m²)', amount: 100800 },
+          { description: 'Ridge cap and flashing (8 lm)', amount: 96000 },
+          { description: 'Labor', amount: 320000 },
+        ],
+        total: 1045800,
+      },
+    },
   },
   projects: {
     eyebrow: 'Projects',
@@ -28,6 +46,7 @@ export const en: SiteContent = {
     pilot: 'pilot',
     inProgress: 'MVP in staging',
     othersTitle: 'Other projects',
+    caseLabels: { stack: 'stack', hard: 'hard part', result: 'result' },
     labels: {
       problem: 'The problem',
       built: 'What I built',
@@ -260,30 +279,35 @@ export const en: SiteContent = {
       {
         name: 'Flight prices',
         metric: 'R² 0.97',
+        score: 0.97,
         description: 'Regression on 300,000+ flights (airline, route, stops, duration, class). I compared 6 models with GridSearchCV; Random Forest won.',
         repo: 'https://github.com/gabrielsosa32/Flight-price-prediction',
       },
       {
         name: 'Fake news',
         metric: '91% accuracy',
+        score: 0.91,
         description: 'A classifier using an LSTM over pretrained Word2Vec embeddings, evaluated on 2,093 articles.',
         repo: 'https://github.com/gabrielsosa32/tp-final-deep-learning',
       },
       {
         name: 'Heart disease',
         metric: 'AUC 0.89',
+        score: 0.89,
         description: 'AdaBoost vs Gradient Boosting vs XGBoost, default and tuned, on 720 patients. Includes a Streamlit app.',
         repo: 'https://github.com/gabrielsosa32/Boostingmodels',
       },
       {
         name: 'Customer churn',
         metric: 'AUC 0.86',
+        score: 0.86,
         description: 'Telecom churn prediction with decision trees, SMOTE, bagging and Random Forest. Includes a Streamlit app.',
         repo: 'https://github.com/gabrielsosa32/churn-prediction',
       },
       {
         name: 'House prices',
         metric: 'R² 0.63',
+        score: 0.63,
         description: 'An honest comparison of 8 regression models on a small dataset (545 houses); Stacking came out on top. Includes a Streamlit app.',
         repo: 'https://github.com/gabrielsosa32/house-price-prediction',
       },
