@@ -15,7 +15,13 @@ useHead(() => ({
   ],
 }))
 
-onMounted(restore)
+const panel = usePanel()
+const openProject = computed(() => content.value.projects.main.find(p => p.id === panel.openId.value) ?? null)
+
+onMounted(() => {
+  restore()
+  panel.init(content.value.projects.main.map(p => p.id))
+})
 </script>
 
 <template>
@@ -30,6 +36,7 @@ onMounted(restore)
     <AboutSection />
   </main>
   <ContactSection />
+  <ProjectPanel :project="openProject" @close="panel.close" />
 </template>
 
 <style>

@@ -1,47 +1,7 @@
 <script setup lang="ts">
-import type { ProjectId } from '~/content/types'
-import { projectIdFromHash } from '~/utils/hash'
-import { createPanelHistory } from '~/utils/panelHistory'
-
 const { content } = useLang()
 const t = computed(() => content.value.projects)
-const ids = computed(() => t.value.main.map(p => p.id))
-
-const openId = ref<ProjectId | null>(null)
-const openProject = computed(() => t.value.main.find(p => p.id === openId.value) ?? null)
-let panelHistory: ReturnType<typeof createPanelHistory> | null = null
-
-function syncFromHash() {
-  openId.value = projectIdFromHash(location.hash, ids.value)
-  panelHistory?.synced(openId.value !== null)
-}
-
-function open(id: ProjectId) {
-  panelHistory?.open(id)
-  openId.value = id
-}
-
-function close() {
-  if (!openId.value) return
-  // Se cierra ya (no al llegar el popstate), así un segundo "cerrar" no vuelve a ir atrás.
-  openId.value = null
-  panelHistory?.close()
-}
-
-onMounted(() => {
-  panelHistory = createPanelHistory(window.history, location.pathname + location.search)
-  const initial = projectIdFromHash(location.hash, ids.value)
-  if (initial) {
-    panelHistory.openFromLoad(initial)
-    openId.value = initial
-  }
-  window.addEventListener('popstate', syncFromHash)
-  window.addEventListener('hashchange', syncFromHash)
-})
-onBeforeUnmount(() => {
-  window.removeEventListener('popstate', syncFromHash)
-  window.removeEventListener('hashchange', syncFromHash)
-})
+const { open } = usePanel()
 </script>
 
 <template>
@@ -75,7 +35,6 @@ onBeforeUnmount(() => {
         </div>
       </div>
     </div>
-    <ProjectPanel :project="openProject" @close="close" />
   </section>
 </template>
 
