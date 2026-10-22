@@ -62,7 +62,7 @@ function statusLabel(p: Project) {
 <style scoped>
 .hero__inner { display: grid; gap: 36px; padding-top: 40px; padding-bottom: 72px; }
 @media (min-width: 1024px) {
-  .hero__inner { grid-template-columns: minmax(260px, 1fr) 2fr; align-items: center; gap: 40px; padding-top: 56px; padding-bottom: 96px; min-height: calc(100vh - 60px); }
+  .hero__inner { grid-template-columns: minmax(260px, 1fr) 2fr; align-items: center; gap: 40px; padding-top: 56px; padding-bottom: 96px; min-height: min(calc(100vh - 60px), 860px); }
 }
 .avatar { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; border: 3px solid var(--border-strong); box-shadow: var(--shadow); }
 /* En el celular la presentación va compacta (foto al lado del nombre) para que las demos entren en la primera pantalla. */

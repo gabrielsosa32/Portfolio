@@ -6,18 +6,16 @@ const t = computed(() => content.value.testimonial)
 <template>
   <section class="section testimonial-section" :aria-label="t.eyebrow">
     <div class="container">
-      <figure v-reveal class="testimonial">
-        <p class="eyebrow">{{ t.eyebrow }}</p>
-        <span class="testimonial__mark" aria-hidden="true">“</span>
-        <blockquote class="testimonial__quote">{{ t.quote }}</blockquote>
-        <figcaption class="testimonial__author">
-          <span class="testimonial__initials" aria-hidden="true">AG</span>
-          <span>
-            <strong>{{ t.name }}</strong>
-            <span class="testimonial__role">{{ t.role }} · {{ t.relation }}</span>
-          </span>
+      <p class="eyebrow">{{ t.eyebrow }}</p>
+      <figure v-reveal class="comment">
+        <span class="comment__mark" aria-hidden="true">/**</span>
+        <blockquote class="comment__quote">{{ t.quote }}</blockquote>
+        <figcaption class="comment__author">
+          <span class="comment__at" aria-hidden="true">@author</span>
+          <span><strong>{{ t.name }}</strong> <span class="comment__role">{{ t.role }} · {{ t.relation }}</span></span>
         </figcaption>
-        <p class="testimonial__note">{{ t.note }}</p>
+        <p class="comment__note"><span aria-hidden="true">@note </span>{{ t.note }}</p>
+        <span class="comment__mark" aria-hidden="true">*/</span>
       </figure>
     </div>
   </section>
@@ -25,27 +23,17 @@ const t = computed(() => content.value.testimonial)
 
 <style scoped>
 .testimonial-section { padding-top: 0; }
-.testimonial {
-  position: relative; margin: 0; padding: 36px 28px 28px; border-radius: 20px;
-  background: var(--card); border: 1px solid var(--border);
-  background-image: radial-gradient(circle at 100% 0%, rgba(var(--net-rgb), .10), transparent 45%);
+.comment {
+  margin: 0; padding: 22px 24px 22px 28px; border-radius: 12px; border: 1px solid var(--border-strong);
+  border-left: 3px solid var(--accent); background: rgb(28 25 23 / .88);
 }
-@media (min-width: 768px) { .testimonial { padding: 48px 56px 40px; } }
-.testimonial__mark {
-  position: absolute; right: 28px; top: 4px; font-size: 140px; line-height: 1; font-family: Georgia, serif;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent;
-  opacity: .5;
+@media (min-width: 768px) { .comment { padding: 28px 40px 28px 44px; } }
+.comment__mark { display: block; font-family: var(--mono); color: var(--muted); font-size: 14px; }
+.comment__quote {
+  margin: 10px 0 0; font-size: clamp(18px, 2.2vw, 21px); line-height: 1.55; color: var(--fg); font-weight: 500; max-width: 820px;
 }
-.testimonial__quote {
-  margin: 10px 0 0; font-size: clamp(18px, 2.2vw, 22px); line-height: 1.5; color: var(--fg); font-weight: 500;
-  max-width: 820px; letter-spacing: -.005em;
-}
-.testimonial__author { display: flex; align-items: center; gap: 14px; margin-top: 28px; }
-.testimonial__initials {
-  flex: none; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
-  font-weight: 700; font-size: 15px; color: var(--muted); background: var(--bg-alt); border: 1px solid var(--border-strong);
-}
-.testimonial__author strong { display: block; font-size: 16px; }
-.testimonial__role { display: block; font-size: 14px; color: var(--muted); }
-.testimonial__note { margin-top: 18px; font-size: 13px; color: var(--muted); }
+.comment__author { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; margin-top: 20px; }
+.comment__at, .comment__note span { font-family: var(--mono); color: var(--accent-2); font-size: 13px; }
+.comment__role { color: var(--muted); font-size: 14px; }
+.comment__note { margin: 8px 0 10px; font-size: 13px; color: var(--muted); }
 </style>

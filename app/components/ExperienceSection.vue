@@ -7,17 +7,17 @@ const t = computed(() => content.value.experience)
   <section id="experiencia" class="section">
     <div class="container">
       <p class="eyebrow">{{ t.eyebrow }}</p>
-      <h2 class="section-title">{{ t.title }}</h2>
+      <h2 class="section-title gitlog__title"><span class="visually-hidden">{{ t.title }}</span><span aria-hidden="true">git log --author=gabriel</span></h2>
 
-      <ol class="timeline">
-        <li v-for="item in t.items" :key="item.org" v-reveal class="timeline__item">
-          <span class="timeline__dot" aria-hidden="true" />
-          <div class="timeline__head">
-            <h3>{{ item.role }} <span class="timeline__org">· {{ item.org }}</span></h3>
-            <span class="timeline__period">{{ item.period }}</span>
-          </div>
-          <ul class="timeline__points">
-            <li v-for="p in item.points" :key="p">{{ p }}</li>
+      <ol v-reveal class="gitlog">
+        <li v-for="item in t.items" :key="item.org" class="gitlog__item">
+          <p class="gitlog__head">
+            <span class="gitlog__star" aria-hidden="true">*</span>
+            <span class="gitlog__period">{{ item.period }}</span>
+            <span class="gitlog__role">{{ item.role }} <span class="gitlog__org">· {{ item.org }}</span></span>
+          </p>
+          <ul class="gitlog__points">
+            <li v-for="p in item.points" :key="p"><span class="gitlog__pipe" aria-hidden="true">│</span>{{ p }}</li>
           </ul>
         </li>
       </ol>
@@ -26,21 +26,18 @@ const t = computed(() => content.value.experience)
 </template>
 
 <style scoped>
-.timeline { list-style: none; margin: 40px 0 0; padding: 0 0 0 28px; position: relative; display: grid; gap: 36px; }
-.timeline::before {
-  content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px;
-  background: linear-gradient(to bottom, var(--accent), var(--accent-2) 60%, var(--border));
-  border-radius: 2px;
+.gitlog__title { font-family: var(--mono); font-size: clamp(20px, 3vw, 28px); letter-spacing: -.01em; }
+.gitlog {
+  list-style: none; margin: 28px 0 0; padding: 20px 22px; display: grid; gap: 22px;
+  background: rgb(0 0 0 / .55); border: 1px solid var(--border-strong); border-radius: 12px;
+  font-family: var(--mono); font-size: 14px; line-height: 1.6;
 }
-.timeline__item { position: relative; }
-.timeline__dot {
-  position: absolute; left: -28px; top: 6px; width: 16px; height: 16px; border-radius: 50%;
-  background: var(--bg); border: 3px solid var(--accent);
-}
-.timeline__item:first-child .timeline__dot { background: var(--accent); box-shadow: 0 0 0 6px rgba(var(--net-rgb), .15); }
-.timeline__head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; }
-.timeline__head h3 { font-size: 18px; letter-spacing: -.01em; }
-.timeline__org { color: var(--accent); font-weight: 600; }
-.timeline__period { font-size: 13px; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
-.timeline__points { margin-top: 8px; padding-left: 18px; display: grid; gap: 6px; color: var(--fg-2); max-width: 760px; }
+.gitlog__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.gitlog__star { color: var(--live); }
+.gitlog__period { color: var(--amber); white-space: nowrap; }
+.gitlog__role { color: var(--fg); font-weight: 700; }
+.gitlog__org { color: var(--accent); font-weight: 500; }
+.gitlog__points { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 4px; color: var(--fg-2); font-family: Inter, system-ui, sans-serif; font-size: 15px; }
+.gitlog__points li { display: flex; gap: 12px; }
+.gitlog__pipe { font-family: var(--mono); color: var(--border-strong); flex: none; }
 </style>
