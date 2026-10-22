@@ -10,22 +10,21 @@ const shown = ref(props.demo.messages.length)
 const typing = ref(false)
 
 let timers: ReturnType<typeof setTimeout>[] = []
-let visible = false
-let reduced = false
-let io: IntersectionObserver | null = null
+const { active, reduced } = useInView(root, { threshold: 0.35 })
 
 function clear() {
   timers.forEach(clearTimeout)
   timers = []
 }
 
+function showAll() {
+  clear()
+  shown.value = props.demo.messages.length
+  typing.value = false
+}
+
 function play() {
   clear()
-  if (reduced) {
-    shown.value = props.demo.messages.length
-    typing.value = false
-    return
-  }
   const steps = chatSchedule(props.demo.messages)
   shown.value = 0
   typing.value = false
@@ -33,22 +32,17 @@ function play() {
     if (s.typingAt !== null) timers.push(setTimeout(() => { typing.value = true }, s.typingAt))
     timers.push(setTimeout(() => { typing.value = false; shown.value = i + 1 }, s.showAt))
   })
-  timers.push(setTimeout(() => { if (visible) play() }, chatSchedule.total(steps)))
+  timers.push(setTimeout(() => { if (active.value) play() }, chatSchedule.total(steps)))
 }
 
-watch(() => props.demo, () => { if (visible) play() })
-
-onMounted(() => {
-  reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  io = new IntersectionObserver(([e]) => {
-    const now = Boolean(e?.isIntersecting)
-    if (now && !visible) { visible = true; play() }
-    else if (!now && visible) { visible = false; clear() }
-  }, { threshold: 0.35 })
-  if (root.value) io.observe(root.value)
+// Arranca al entrar en pantalla, se corta al salir, y reinicia de cero si cambia el idioma.
+watch([active, () => props.demo], ([on]) => {
+  if (on) play()
+  else if (reduced.value) showAll()
+  else clear()
 })
 
-onBeforeUnmount(() => { io?.disconnect(); clear() })
+onBeforeUnmount(clear)
 </script>
 
 <template>
